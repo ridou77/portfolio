@@ -32,7 +32,7 @@
             <ul>
                 <li><a href="#" class="active">Acceuil</a></li>
                 <li><a href="#a-propos">A propos</a></li>
-                <li><a href="#titre-competence">Competence</a></li>
+                <li><a href="#titre-experiences">Experiences</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contactez-moi</a></li>
             </ul>
@@ -42,167 +42,595 @@
     </header>
 
     <main>
-        <section class="hero-section">
+        <!-- <section class="hero-section">
             <div class=" profil dark">
                 <img src="img/image-header.png" alt="Profil" class="profile-pic" width="150px">
             </div>
-        </section>
-        <section class="a-propos-box light" id="a-propos">
-            <h2 class="titre">A propos</h2>
-            <h3>Rémi RUSSI</h3>
-            <p class="title">Développeur</p>
-            <p class="description">Etudiant en première année de BTS SIO (Services Informatiques aux Organisations),
-                option SLAM (Solutions Logicielles et Applications Métier). Passionné par le développement informatique,
-                je me spécialise dans la conception et la programmation d'applications, en explorant divers langages et
-                frameworks.
-                Ce portfolio regroupe mes projets, compétences et expériences acquises au cours de ma formation. Vous y
-                trouverez des réalisations en développement web, mobile et logiciel, ainsi que des travaux liés aux
-                bases de données et à la gestion de projets.
-                N'hésitez pas à parcourir mon travail et à me contacter pour toute question ou collaboration !</p>
-        </section>
+        </section> -->
+        <section class="a-propos-box" id="a-propos">
+    <div class="a-propos-container">
+        <!-- En-tête avec photo -->
+        <div class="a-propos-header">
+            <div class="profile-image-container">
+                <div class="profile-ring"></div>
+                <img src="img/image-header.png" alt="Rémi RUSSI" class="profile-image">
+            </div>
+            <div class="header-text">
+                <h1 class="hero-name">Rémi RUSSI</h1>
+                <p class="hero-title">Développeur Full Stack</p>
+                <span class="hero-badge">BTS SIO Option SLAM</span>
+            </div>
+        </div>
+        
+        <!-- Cards principales -->
+        <div class="a-propos-cards">
+            <div class="about-card">
+                <div class="card-icon">👨‍💻</div>
+                <h3>Qui suis-je ?</h3>
+                <p>Étudiant passionné en première année de BTS SIO, spécialisé dans le développement d'applications innovantes et la conception de solutions logicielles.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="card-icon">🎯</div>
+                <h3>Ma Spécialité</h3>
+                <p>Développement web et mobile, gestion de bases de données, et création d'applications métier performantes avec diverses technologies modernes.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="card-icon">🚀</div>
+                <h3>Mon Objectif</h3>
+                <p>Créer des solutions technologiques intuitives et performantes qui répondent aux besoins réels des utilisateurs et des entreprises.</p>
+            </div>
+        </div>
+        
+        <!-- Statistiques -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">1+</div>
+                <div class="stat-label">Année d'études</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projets réalisés</div>
+            </div>
+        </div>
+        
+        <!-- Boutons d'action -->
+        <div class="cta-section">
+            <a href="#projets" class="btn-primary">
+                <span>Voir mes projets</span>
+                <span>→</span>
+            </a>
+            <a href="#contact" class="btn-secondary">
+                <span>Me contacter</span>
+            </a>
+        </div>
+    </div>
+</section>
         <span></span>
-        <section class="competence-box dark" id="titre-competence">
-            <h2 class="titre">Mes compétences</h2>
-            <div class="competence-box-content">
-                <ul class="languages">
-                    <li>
-                        <img src="img/PHP-logo.png" alt="logo PHP " class="logo-languages">
-                    </li>
-                </ul>
-                <ul class="languages">
-                    <li>
-                        <img src="img/html-logo.png" alt="logo PHP " class="logo-languages">
-                    </li>
-                </ul>
-                <ul class="languages">
-                    <li>
-                        <img src="img/css-logo-vector.svg" alt="logo PHP " class="logo-languages">
-                    </li>
-                </ul>
-                <ul class="languages">
-                    <li>
-                        <img src="img/Logo_C_sharp.svg.png" alt="logo PHP " class="logo-languages">
-                    </li>
-                </ul>
-                <ul class="languages">
-                    <li>
-                        <img src="img/sql-logo.png" alt="logo PHP " class="logo-languages">
-                    </li>
-                </ul>
+
+        <section class="competence-box" id="titre-competence">
+            <h2>Mes Compétences</h2>
+
+            <div class="competence-container">
+                <!-- Langages de programmation -->
+                <div class="competence-category">
+                    <div class="category-header">
+                        <span class="category-icon">💻</span>
+                        <h3>Langages</h3>
+                    </div>
+                    <div class="competence-grid">
+                        
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/html-logo.png" alt="HTML" class="skill-logo">
+                            </div>
+                            <h4>HTML</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 90%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/css-logo-vector.svg" alt="CSS" class="skill-logo">
+                            </div>
+                            <h4>CSS</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/Logo_C_sharp.svg.png" alt="C#" class="skill-logo">
+                            </div>
+                            <h4>C#</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 75%"></div>
+                            </div>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/PHP-logo.png" alt="PHP" class="skill-logo">
+                            </div>
+                            <h4>PHP</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases de données -->
+                <div class="competence-category">
+                    <div class="category-header">
+                        <span class="category-icon">🗄️</span>
+                        <h3>Bases de données</h3>
+                    </div>
+                    <div class="competence-grid">
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/sql-logo.png" alt="SQL" class="skill-logo">
+                            </div>
+                            <h4>MariaDb / MySQL</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 80%"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <img src="img/sql-logo.png" alt="SQL Server" class="skill-logo">
+                            </div>
+                            <h4>SQL Server</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 70%"></div>
+                            </div>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outils & Frameworks -->
+                <div class="competence-category">
+                    <div class="category-header">
+                        <span class="category-icon">🛠️</span>
+                        <h3>Outils & Frameworks</h3>
+                    </div>
+                    <div class="competence-grid">
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <span class="skill-text-logo">Git</span>
+                            </div>
+                            <h4>Git / GitHub</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 75%"></div>
+                            </div>
+                            <span class="skill-percentage">75%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <span class="skill-text-logo">.NET</span>
+                            </div>
+                            <h4>.NET Framework</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 70%"></div>
+                            </div>
+                            <span class="skill-percentage">70%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <span class="skill-text-logo">JS</span>
+                            </div>
+                            <h4>JavaScript</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 65%"></div>
+                            </div>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-logo-wrapper">
+                                <span class="skill-text-logo">EF</span>
+                            </div>
+                            <h4>Entity Framework</h4>
+                            <div class="skill-level">
+                                <div class="skill-bar" style="--level: 65%"></div>
+                            </div>
+                            <span class="skill-percentage">65%</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Soft Skills
+        <div class="competence-category soft-skills">
+            <div class="category-header">
+                <span class="category-icon">⭐</span>
+                <h3>Compétences transversales</h3>
+            </div>
+            <div class="soft-skills-grid">
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">🎯</span>
+                    <span>Autonomie</span>
+                </div>
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">🤝</span>
+                    <span>Travail d'équipe</span>
+                </div>
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">🔍</span>
+                    <span>Recherche & Veille</span>
+                </div>
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">📊</span>
+                    <span>Gestion de projet</span>
+                </div>
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">💡</span>
+                    <span>Résolution de problèmes</span>
+                </div>
+                <div class="soft-skill-badge">
+                    <span class="badge-icon">📚</span>
+                    <span>Apprentissage continu</span>
+                </div>
+            </div>
+        </div> -->
             </div>
         </section>
 
-        <section class="cv-box light" id="titre-cv">
-            <h2 class="titre">C.V</h2>
-            <div class="cv-box-content">
-                <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
-                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-                border-radius: 8px; will-change: transform;">
-                    <iframe loading="lazy"
-                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                        src="https://www.canva.com/design/DAFcWPRuAns/xSjqIVyrQYUnPOuAW2cSMw/view?embed"
-                        allowfullscreen="allowfullscreen" allow="fullscreen">
-                    </iframe>
+        <section class="projet-global"id="projets">
+            <h2>Mes Projets</h2>
+
+            <!-- Projets Entreprise -->
+            <div class="projet-entreprise">
+                <h3>Projets Entreprise</h3>
+                <div class="projet-entreprise-grid">
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Module Générique Emdelen</h4>
+                            <p class="projet-card-description">
+                                - Adaptation de Dolibarr aux besoins spécifiques à Emdelen <br><br>
+                                - Éviter les modifications du core ou du moins de les limiter <br><br>
+                                - Ajout de d'extrafield, widget et autres fonctionnalités <br><br>
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Module Congés</h4>
+                            <p class="projet-card-description">
+                                - Offrir une vue centralisée sur l'ensemble des congés demandés <br><br>
+                                - Vue par projet, utilisateurs, et par services<br>
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Module Notation fournisseurs</h4>
+                            <p class="projet-card-description">
+                                - Permet aux utilisateurs de noter les différents fournisseurs<br><br>
+                                - Notations par phase de projet<br>
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Module de gestion de projet / suivi de charge</h4>
+                            <p class="projet-card-description">
+                                - Améliorer du suivi des projets<br><br>
+                                - vision intégrée du prévisionnel en relation avec les objectifs financiers<br><br>
+                                - Charge prévisionnelle des salariés<br>
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFcWPRuAns&#x2F;xSjqIVyrQYUnPOuAW2cSMw&#x2F;view?utm_content=DAFcWPRuAns&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
-                    target="_blank" rel="noopener"></a>
-                <a href="/CV/cv_remirussi.pdf"
-                download="cv_remirussi.pdf" class="btn_cv"> Télecharger</a>
             </div>
 
+            <div class="ligne-horizontale-projet"></div>
+
+            <!-- Projets École -->
+            <div class="projet-ecole">
+                <h3>Projets École</h3>
+                <div class="projet-ecole-grid">
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/isitech.webp" alt="Projet école" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Application de note de frais</h4>
+                            <p class="projet-card-description">
+                                Application client lourd de gestion des notes de frais développée en C# avec Windows
+                                Forms.
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">C#</span>
+                                <span class="tech-badge">.NET</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projet-card">
+                        <div class="projet-card-header">
+                            <img src="img/isitech.webp" alt="Projet école" class="projet-card-logo">
+                        </div>
+                        <div class="projet-card-body">
+                            <h4 class="projet-card-title">Application de gestion médicale</h4>
+                            <p class="projet-card-description">
+                                Application de gestion médicale développée en C# avec APS .NET Core MVC.
+                            </p>
+                            <div class="projet-card-technologies">
+                                <span class="tech-badge">C#</span>
+                                <span class="tech-badge">.NET</span>
+                                <span class="tech-badge">SQL Server</span>
+                            </div>
+                            <div class="projet-card-footer">
+                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
+                                <a href="#" class="projet-btn projet-btn-secondary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </section>
 
-        <section class="projet-global dark" id="projets">
-            <h2 class="titre">Mes projets</h2>
-            <div class="projet">
-                <div class="projet-box-dolibarr">
-                    <div class="dolibarr">
-                        <img src="img/dolibarr.png" alt="dolibarr-img" class="logo-dolibarr">
+
+        <section class="experiences-box" id="titre-experiences">
+            <h2>Expériences & CV</h2>
+
+            <div class="experiences-container">
+                <div class="timeline">
+
+                    <!-- Expérience 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-title">Gestion de projet</h3>
+                                    <p class="experience-company">Emdelen</p>
+                                </div>
+                            </div>
+                            <span class="experience-date">Sept 2024 - Aujourd'hui</span>
+                            <p class="experience-description">
+                                Suivi des projets de développement de modules de A à Z
+                            </p>
+                            <div class="experience-tasks">
+                                <h4>Missions principales :</h4>
+                                <ul>
+                                    <li>Expression du besoin client</li>
+                                    <li>Élaboration de cahier des charges</li>
+                                    <li>Modélisation de base de données</li>
+                                    <li>Développement du module</li>
+                                    <li>Phase de tests</li>
+                                    <li>Mise en Production</li>
+                                    <li>Mise à jour régulière des modules</li>
+                                    <li>Rédaction de documentation technique</li>
+                                </ul>
+                            </div>
+                            <div class="experience-technologies">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dot"></div>
                     </div>
-                    <p class="module-dolibarr">
-                        Module Notation fournisseur
-                    </p>
-                    <p class="module-dolibarr">
-                        Module Générique pour Emdelen
-                    </p>
-                    <p class="module-dolibarr">
-                        Module de gestion de projet/plan de charge
-                    </p>
-                    <p class="module-dolibarr">
-                        Module de gestion de tache
-                    </p>
-                    <a href="https://www.dolistore.com/index.php?l=fr" target="_blank">
-                        <img src="img/logo-dolistore.webp" alt="logo-dolistore" class="logo-dolistore">
-                    </a>
-                </div>
-                <div class="ligne-verticale"></div>
-                <div class="projet-box-ecole">
-                    <div class="ecole">
-                        <img src="img/isitech-logo.png" alt="ecole-img" class="logo-ecole">
+
+                    <!-- Expérience 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-title">Autonomie</h3>
+                                    <p class="experience-company">Emdelen</p>
+                                </div>
+                            </div>
+                            <span class="experience-date">Sept 2024 - Aujourd'hui</span>
+                            <div class="experience-tasks">
+                                <h4>Missions principales :</h4>
+                                <ul>
+                                    <li>Développement de compétences grâce à de la recherche</li>
+                                    <li>Apprendre sans être épaulé</li>
+                                </ul>
+                            </div>
+                            <div class="experience-technologies">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dot"></div>
                     </div>
-                    <div class="isitech-projet">
-                        <img src="img/winforms-logo.png" alt="logo-winform" class="logo-winform">
-                        <p class="txt-winform">
-                            Biblioteque de jeux sur WinForm permetant de ressenser un grand nombre de jeux classés
-                            par
-                            leurs
-                            noms, année, types, etc...
-                        </p>
+
+                    <!-- Expérience 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <div class="experience-title-group">
+                                    <h3 class="experience-title">Mise à jour d'ERP</h3>
+                                    <p class="experience-company">Emdelen</p>
+                                </div>
+                            </div>
+                            <span class="experience-date">2025</span>
+                            <p class="experience-description">
+                                Mise à jour de l'ERP Dolibarr pour l'entreprise Emdelen
+                            </p>
+                            <div class="experience-tasks">
+                                <h4>Réalisations :</h4>
+                                <ul>
+                                    <li>Gestion de l'hébergement</li>
+                                    <li>Sauvegarde et archivage de bases de données</li>
+                                    <li>Mise en production de modules externes</li>
+                                </ul>
+                            </div>
+                            <div class="experience-technologies">
+                                <span class="tech-tag">Dolibarr</span>
+                                <span class="tech-tag">Linux</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dot"></div>
                     </div>
+
                 </div>
             </div>
-        </section>
 
-        <section class="expériences light" id="titre-experiences">
-            <h2 class="titre">Experiences</h2>
-            <div class="expériences">
-
+            <!-- Bouton de téléchargement CV en haut -->
+            <div class="cv-download-section">
+                <p class="cv-intro">Découvrez mon parcours professionnel</p>
+                <a href="/CV/cv_remirussi.pdf" download="cv_remirussi.pdf" class="btn_cv_experience">
+                    <span>📄</span>
+                    <span>Télécharger mon CV</span>
+                </a>
             </div>
+
         </section>
 
     </main>
 
     <footer>
-        <section class="contact-box dark" id="contact">
-            <div class="contact">
-                <h2 class="titre">Contactez-moi</h2>
-                <ul class="contact-box-content">
-                    <li>
-                        <h3>
-                            E-mail : remirusi@gmail.com
-                        </h3>
-                        <h3>
-                            Téléphone : 0673067928
-                        </h3>
-                        <h3>
 
-                            <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/"
-                                target="_blank">LinkedIn</a>
-                        </h3>
-                        <h3>
-                            <a href="https://github.com/ridou77" target="_blank">Github</a>
-                        </h3>
-                    </li>
-                </ul>
-                <form action="" class="form-content">
-                    <div class="form-categories">
-                        <label for="Nom">Nom</label>
-                        <input type="text" required>
+        <div class="ligne-Horizontale"></div>
+
+        <section class="contact-box" id="contact">
+            <div class="contact">
+                <h2>Contactez-moi</h2>
+
+                <div class="contact-wrapper">
+                    <!-- Section informations de contact -->
+                    <div class="contact-info-section">
+                        <h3>Mes Coordonnées</h3>
+                        <ul class="contact-box-content">
+                            <li class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <h3>remirusi@gmail.com</h3>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <h3>06 73 06 79 28</h3>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon">💼</span>
+                                <h3>
+                                    <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/" target="_blank">
+                                        LinkedIn
+                                    </a>
+                                </h3>
+                            </li>
+                            <li class="contact-item">
+                                <span class="contact-icon">💻</span>
+                                <h3>
+                                    <a href="https://github.com/ridou77" target="_blank">
+                                        GitHub
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="form-categories">
-                        <label for="E-mail">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+
+                    <!-- Section formulaire -->
+                    <div class="form-section">
+                        <h3>Envoyez-moi un message</h3>
+                        <form action="" method="POST" class="form-content">
+                            <div class="form-categories">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                            </div>
+
+                            <div class="form-categories">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                            </div>
+
+                            <div class="form-categories">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone"
+                                    placeholder="Votre numéro de téléphone">
+                            </div>
+
+                            <div class="form-categories">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required
+                                    placeholder="Écrivez votre message ici..."></textarea>
+                            </div>
+
+                            <button type="submit" class="sendBtn">Envoyer le message</button>
+                        </form>
                     </div>
-                    <div class="form-categories">
-                        <label for="Téléphone">Téléphone</label>
-                        <input type="tel">
-                    </div>
-                    <div class="form-categories">
-                        <label for="Message">Message</label>
-                        <input type="text">
-                    </div>
-                    <button type="submit" class="sendBtn">Envoyer</button>
-                </form>
+                </div>
             </div>
         </section>
     </footer>
