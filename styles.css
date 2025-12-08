@@ -33,17 +33,24 @@ body {
 nav.navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Changé de space-around */
-    padding: 0 1.5rem; /* AJOUTÉ */
+    justify-content: space-between;
+    padding: 0 1.5rem;
     width: 100%;
-    max-width: 100vw; /* AJOUTÉ */
+    max-width: 100vw;
     height: 14.398200224971879vh;
-    z-index: 1000; /* Augmenté */
+    z-index: 1000;
     background-color: var(--second-color);
-    position: fixed; /* Changé de absolute à fixed */
+    position: fixed; /* Changez de relative à fixed */
     top: 0;
     left: 0;
-    box-sizing: border-box; /* AJOUTÉ */
+    box-sizing: border-box;
+    transform: translateY(0); /* AJOUTÉ */
+    transition: transform 0.3s ease; /* AJOUTÉ */
+}
+
+/* Classe pour cacher la navbar */
+nav.navbar.hidden {
+    transform: translateY(-100%);
 }
 
 nav.navbar h1 {
@@ -94,16 +101,15 @@ nav.navbar #sidebarToggle.active span:nth-child(3) {
 nav.sidebar {
     position: fixed;
     width: 100%;
-    max-width: 100vw; /* AJOUTÉ */
-    height: 100vh; /* Changé de 100% */
+    max-width: 100vw;
+    height: calc(100vh - 14.398200224971879vh); /* MODIFIÉ - hauteur ajustée */
     background-color: var(--second-color);
     transform: translateX(-100%);
     transition: all ease-out 0.3s;
-    top: 14.398200224971879vh; /* Ajusté */
-    left: 0; /* AJOUTÉ */
+    top: 14.398200224971879vh; /* ✅ Garde cette valeur */
+    left: 0;
     z-index: 999;
-    overflow-y: auto; /* AJOUTÉ - scroll si nécessaire */
-    box-sizing: border-box; /* AJOUTÉ */
+    box-sizing: border-box;
 }
 
 nav.sidebar.active {
@@ -650,7 +656,6 @@ main section.hero-section p {
     }
 }
 
-
 /***********COMPETENCE****************/
 
 .competence-box {
@@ -932,33 +937,70 @@ main section.hero-section p {
     color: #2d3748;
 }
 
-/* Responsive Mobile */
+/* Responsive Mobile COMPETENCES */
 @media screen and (max-width: 768px) {
     .competence-box {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    .competence-container {
+        width: 100%;
+        gap: 2.5rem;
     }
     
     .competence-box h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        word-wrap: break-word;
     }
     
     .competence-category {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .category-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.75rem;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .category-icon {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
     }
     
     .category-header h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .competence-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .skill-card {
+        padding: 1.5rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .skill-logo-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .skill-text-logo {
+        font-size: 1.5rem;
+    }
+    
+    .skill-card h4 {
+        font-size: 1.1rem;
     }
     
     .soft-skills-grid {
@@ -967,7 +1009,37 @@ main section.hero-section p {
     }
     
     .soft-skill-badge {
-        justify-content: center;
+        justify-content: flex-start;
+        padding: 1rem 1.25rem;
+    }
+}
+
+/* Petit mobile */
+@media screen and (max-width: 480px) {
+    .competence-box {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .competence-box h2 {
+        font-size: 1.6rem;
+    }
+    
+    .competence-category {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .category-header {
+        gap: 0.75rem;
+    }
+    
+    .category-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .category-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
     }
 }
 
@@ -1218,6 +1290,8 @@ main section.hero-section p {
 
 /************PROJET***************/
 
+/************PROJET***************/
+
 .projet-global {
     padding: 4rem 2rem;
     background: linear-gradient(135deg, #0089a7 0%, #005f73 100%);
@@ -1265,6 +1339,7 @@ main section.hero-section p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2.5rem;
+    margin: 1rem;
 }
 
 /* Section Projets École */
@@ -1450,148 +1525,46 @@ main section.hero-section p {
     border-radius: 2px;
 }
 
-/* Responsive Mobile PROJETS */
+/* Responsive Mobile */
 @media screen and (max-width: 768px) {
     .projet-global {
-        padding: 2rem 1rem;
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
+        padding: 3rem 1rem;
     }
     
     .projet-global > h2 {
-        font-size: 1.8rem;
-        padding: 0 0.5rem;
-    }
-    
-    .projet-entreprise,
-    .projet-ecole {
-        width: 100%;
-        max-width: 100%;
+        font-size: 2rem;
     }
     
     .projet-entreprise > h3,
     .projet-ecole > h3 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         flex-direction: column;
-        gap: 0.5rem;
     }
     
-    .projet-entreprise-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        width: 100%;
-    }
-    
+    .projet-entreprise-grid,
     .projet-ecole-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 2rem;
-        width: 100%;
-    }
-    
-    .projet-card {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        min-height: auto;
-    }
-    
-    .projet-ecole-grid .projet-card {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
     }
     
     .projet-card-header {
-        height: 120px;
-        padding: 1.5rem;
-    }
-    
-    .projet-card-logo {
-        max-width: 60%;
-        max-height: 100px;
+        height: 180px;
     }
     
     .projet-card-body {
         padding: 1.5rem;
-    }
-    
-    .projet-card-title {
-        font-size: 1.3rem;
-    }
-    
-    .projet-card-description {
-        font-size: 0.95rem;
     }
     
     .projet-card-footer {
         flex-direction: column;
-        gap: 0.75rem;
-    }
-    
-    .projet-btn {
-        width: 100%;
-        padding: 0.875rem 1rem;
-    }
-    
-    .ligne-horizontale-projet {
-        margin: 2.5rem auto;
-    }
-}
-
-/* Petit mobile - projets */
-@media screen and (max-width: 480px) {
-    .projet-global {
-        padding: 1.5rem 0.75rem;
-    }
-    
-    .projet-global > h2 {
-        font-size: 1.6rem;
-    }
-    
-    .projet-entreprise > h3,
-    .projet-ecole > h3 {
-        font-size: 1.2rem;
-    }
-    
-    .projet-card {
-        max-width: 100%;
-    }
-    
-    .projet-ecole-grid .projet-card {
-        max-width: 100%;
-    }
-    
-    .projet-card-body {
-        padding: 1.25rem;
-    }
-    
-    .projet-card-title {
-        font-size: 1.2rem;
     }
 }
 
 /* Responsive Tablette */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .projet-entreprise-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
+    .projet-entreprise-grid,
     .projet-ecole-grid {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
-    .projet-ecole-grid .projet-card {
-        width: 100%;
-        height: auto;
-        min-height: 35rem;
     }
 }
 
@@ -1601,29 +1574,18 @@ main section.hero-section p {
         font-size: 3.5rem;
     }
     
-    .projet-entreprise-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
+    .projet-entreprise-grid,
     .projet-ecole-grid {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 /* Très grands écrans */
 @media screen and (min-width: 1400px) {
-    .projet-entreprise-grid {
+    .projet-entreprise-grid,
+    .projet-ecole-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-}
-
-/* Anciens styles (compatibilité) */
-.dolibarr,
-.ecole,
-.isitech-projet,
-.module-dolibarr {
-    display: none;
 }
 
 /***********EXPERIENCES****************/
@@ -2414,5 +2376,82 @@ main section.hero-section p {
 @media screen and (min-width: 1200px) {
     .contact-wrapper {
         gap: 4rem;
+    }
+}
+
+/***********RESPONSIVE****************/
+@media screen and (min-width:768px) {
+
+    /************* à propos *******/
+    .titre{
+        padding-top: 100px;
+    }
+
+
+    .form-categories input {
+        width: 20%
+    } 
+    .description {
+        padding-top: 50px ;
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-bottom: 50px;
+    }    
+
+    /************* à propos *******/
+
+    .cv-box-content {
+        display: flex;
+    }
+
+    .competence-box-content {
+        flex-direction: row;
+        padding: 60px;
+    }
+
+
+    .projet {
+        flex-direction: row;
+    }
+
+    .projet-box-dolibarr {
+        flex: 1;
+    }
+
+    .projet-box-ecole {
+        flex: 1;
+    }
+
+    .ligne-verticale {
+        border: 2px solid rgb(48, 56, 84);
+        height: 70vh;
+    }
+
+    .isitech-projet {
+        padding: 2%;
+        width: 50%;
+    }
+
+    .logo-languages {
+        width: 140px;
+        height: auto;
+    }
+
+    nav.navbar ul {
+        display: flex;
+    }
+
+    nav.navbar {
+        justify-content: space-around;
+    }
+
+    nav.navbar #sidebarToggle {
+        display: none;
+    }
+
+    /* sidebar*/
+
+    nav.sidebar {
+transform: translateX(-100%)!important;
     }
 }
