@@ -3280,22 +3280,30 @@ transform: translateX(-100%)!important;
 }
 
 .sources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    display: flex; /* Plus simple que grid */
+    flex-wrap: wrap; /* Permet le retour à la ligne */
+    justify-content: center; /* Centre les éléments */
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .source-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
+    width: 250px; /* Taille fixe pour uniformité */
+    /* Retirer max-width et width: 100% */
 }
 
 .source-card::before {
@@ -3365,7 +3373,7 @@ transform: translateX(-100%)!important;
 }
 
 .source-card:hover li::before {
-    transform: scale(1.2);
+    transform: scale(1.4);
 }
 
 .source-card:hover li {
@@ -3381,9 +3389,15 @@ transform: translateX(-100%)!important;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
+    justify-content: center;
+    place-items: center; /* Centre chaque élément dans sa cellule */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .theme-card {
+    display: flex;
+    flex-direction: column;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
     border-radius: 20px;
@@ -3393,6 +3407,7 @@ transform: translateX(-100%)!important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: relative;
     overflow: hidden;
+    width: 25rem;
 }
 
 .theme-card::before {
@@ -3405,6 +3420,14 @@ transform: translateX(-100%)!important;
     background: linear-gradient(45deg, transparent, rgba(0, 180, 216, 0.05), transparent);
     animation: shimmerTheme 4s infinite;
     pointer-events: none;
+}
+
+.img-dolibarr{
+    width: 15rem;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
 }
 
 @keyframes shimmerTheme {
