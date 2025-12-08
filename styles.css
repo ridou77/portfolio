@@ -985,10 +985,6 @@ main section.hero-section p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.competence-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-}
 
 .category-header {
     display: flex;
@@ -1036,23 +1032,8 @@ main section.hero-section p {
     overflow: hidden;
 }
 
-.skill-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0, 137, 167, 0.05), rgba(0, 180, 216, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
-.skill-card:hover::before {
-    opacity: 1;
-}
 
-.skill-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 137, 167, 0.3);
-}
 
 .skill-logo-wrapper {
     width: 80px;
@@ -1638,11 +1619,6 @@ main section.hero-section p {
     height: 100%;
 }
 
-.projet-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
 .projet-card-header {
     height: 100px;
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -1672,12 +1648,6 @@ main section.hero-section p {
     max-height: 160px;
     object-fit: contain;
     position: relative;
-    z-index: 2;
-    transition: transform 0.4s ease;
-}
-
-.projet-card:hover .projet-card-logo {
-    transform: scale(1.15) rotate(2deg);
 }
 
 .projet-card-body {
@@ -3315,18 +3285,6 @@ transform: translateX(-100%)!important;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.1), transparent);
     transition: left 0.6s ease;
-}
-
-.source-card:hover::before {
-    left: 100%;
-}
-
-.source-card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        0 0 50px rgba(0, 180, 216, 0.2);
-    border-color: rgba(0, 180, 216, 0.5);
 }
 
 .source-icon {
