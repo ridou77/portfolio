@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille Technologique — Rémi RUSSI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #07090F;
+      --bg2:       #0D1220;
+      --bg3:       #131C2E;
+      --card:      #111827;
+      --text:      #EBE9E3;
+      --muted:     #7A8AA0;
+      --accent:    #00D4AA;
+      --accent2:   #FF5C38;
+      --border:    rgba(255,255,255,0.07);
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'Rubik', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      background: rgba(7,9,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--accent); }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .page-hero {
+      padding: 140px 40px 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(0,212,170,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 40% at 10% 80%, rgba(255,92,56,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--accent);
+    }
+    .page-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--accent); }
+    .page-hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+
+    /* Stats row */
+    .hero-stats-row {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hstat {
+      text-align: left;
+    }
+    .hstat-num {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hstat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    .hstat-sep {
+      width: 1px;
+      background: var(--border);
+      align-self: stretch;
+    }
+
+    /* ── LAYOUT ── */
+    .main-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar-section { margin-bottom: 40px; }
+
+    .sidebar-title {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 14px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      cursor: pointer;
+      text-align: left;
+      margin-bottom: 8px;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: rgba(0,212,170,0.3); color: var(--text); }
+    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,170,0.06); }
+    .filter-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .filter-btn.active .filter-count { color: var(--accent); }
+
+    .source-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .source-link:last-child { border-bottom: none; }
+    .source-link:hover { color: var(--accent); }
+    .source-icon {
+      width: 28px; height: 28px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .forum-stats {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 20px;
+    }
+    .fstat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .fstat:last-child { border-bottom: none; }
+    .fstat-label { color: var(--muted); }
+    .fstat-val {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 0.88rem;
+    }
+
+    /* ── ARTICLES ── */
+    .articles-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .articles-count {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .articles-count span { color: var(--accent); }
+
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      transition: border-color 0.25s, transform 0.25s;
+      display: none;
+    }
+    .article-card.shown {
+      display: block;
+      animation: fadeUp 0.4s ease both;
+    }
+    .article-card:hover { border-color: rgba(0,212,170,0.3); transform: translateY(-3px); }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(16px); }
+      to   { opacity:1; transform: none; }
+    }
+
+    .article-inner {
+      padding: 32px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .article-cat {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid;
+    }
+    .article-cat.dolibarr  { color: #00D4AA; border-color: rgba(0,212,170,0.35); background: rgba(0,212,170,0.06); }
+    .article-cat.securite  { color: #FF5C38; border-color: rgba(255,92,56,0.35); background: rgba(255,92,56,0.06); }
+    .article-cat.mobile    { color: #7C6FE0; border-color: rgba(124,111,224,0.35); background: rgba(124,111,224,0.06); }
+    .article-cat.erp       { color: #F0A500; border-color: rgba(240,165,0,0.35); background: rgba(240,165,0,0.06); }
+    .article-cat.dev       { color: #36B8F0; border-color: rgba(54,184,240,0.35); background: rgba(54,184,240,0.06); }
+
+    .article-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .article-read-time {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    .article-card h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .article-intro {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    .article-body {
+      display: none;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+    .article-body.open { display: block; }
+
+    .article-body h3 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 10px;
+    }
+    .article-body h3:first-child { margin-top: 0; }
+
+    .article-body p { margin-bottom: 14px; }
+
+    .article-body ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    .article-body ul li {
+      padding: 5px 0 5px 18px;
+      position: relative;
+    }
+    .article-body ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    .article-body .highlight {
+      background: var(--bg3);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 0.88rem;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    .article-body code {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      background: var(--bg3);
+      padding: 2px 6px;
+      color: var(--accent);
+    }
+
+    .article-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .article-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .atag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 3px 9px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .btn-expand {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-expand:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-expand.open { border-color: var(--accent); color: var(--accent); }
+
+    /* Sources externes */
+    .sources-section {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .sources-title {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .source-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .source-card:hover { border-color: rgba(0,212,170,0.3); }
+    .source-card-icon { font-size: 1.5rem; margin-bottom: 12px; }
+    .source-card h4 {
+      font-family: var(--font-head);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .source-card p { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+    .source-card-links { display: flex; flex-direction: column; gap: 6px; }
+    .source-card-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .source-card-links a:hover { opacity: 0.75; }
+
+    /* Impact */
+    .impact-section {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .impact-title {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .impact-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .impact-card h4 {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .impact-card p { font-size: 0.85rem; color: var(--muted); margin-bottom: 14px; }
+    .impact-card ul { list-style: none; }
+    .impact-card ul li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 4px 0 4px 16px;
+      position: relative;
+    }
+    .impact-card ul li::before {
+      content: '·';
+      position: absolute; left: 0;
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-copy span { color: var(--accent); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-hero { padding: 110px 20px 60px; }
+      .main-layout { grid-template-columns: 1fr; padding: 50px 20px; }
+      .sidebar { position: static; }
+      .sources-grid, .impact-grid { grid-template-columns: 1fr; }
+      .hero-stats-row { gap: 24px; }
+      .hstat-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="index.html" class="nav-logo">RR<span>.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#titre-experiences">Expériences</a></li>
+        <li><a href="index.html#projets">Projets</a></li>
+        <li><a href="index.html#titre-competence">Compétences</a></li>
+        <li><a href="veille.html" class="active">Veille</a></li>
+        <li><a href="index.html#formation">Formation</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html" class="nav-back">← Retour au portfolio</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HERO ── -->
+  <header class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Curiosité & apprentissage continu</div>
+      <h1>Veille<br><em>Technologique</em></h1>
+      <p>
+        Suivi actif de l'écosystème Dolibarr, des bonnes pratiques PHP et des tendances du développement ERP.
+        Participation à la communauté, expérimentation et application directe dans mes modules professionnels.
+      </p>
+      <div class="hero-stats-row">
+        <div class="hstat">
+          <span class="hstat-num">99</span>
+          <span class="hstat-label">Jours visités</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">17h</span>
+          <span class="hstat-label">Temps de lecture</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">192</span>
+          <span class="hstat-label">Sujets vus</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">12</span>
+          <span class="hstat-label">Sujets créés</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat-num">5</span>
+          <span class="hstat-label">Solutions apportées</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Filtrer par thème</div>
+        <button class="filter-btn active" data-filter="all">
+          Tous les articles <span class="filter-count">7</span>
+        </button>
+        <button class="filter-btn" data-filter="dolibarr">
+          Dolibarr <span class="filter-count">3</span>
+        </button>
+        <button class="filter-btn" data-filter="securite">
+          Sécurité <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" data-filter="mobile">
+          Mobile <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" data-filter="erp">
+          ERP &amp; Gestion <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" data-filter="dev">
+          Développement <span class="filter-count">1</span>
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Sources de veille</div>
+        <a href="https://www.dolibarr.fr/forum/" target="_blank" class="source-link">
+          <div class="source-icon">💬</div>
+          Forum Dolibarr
+        </a>
+        <a href="https://wiki.dolibarr.org" target="_blank" class="source-link">
+          <div class="source-icon">📖</div>
+          Wiki Dolibarr
+        </a>
+        <a href="https://github.com/Dolibarr/dolibarr" target="_blank" class="source-link">
+          <div class="source-icon">🐙</div>
+          GitHub Dolibarr
+        </a>
+        <a href="https://www.youtube.com/channel/UCqyVebuI5n73yjHRZxjzQvg" target="_blank" class="source-link">
+          <div class="source-icon">🎥</div>
+          Patas Monkey (YT)
+        </a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Mon activité forum</div>
+        <div class="forum-stats">
+          <div class="fstat">
+            <span class="fstat-label">📅 Jours visités</span>
+            <span class="fstat-val">99</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-label">📖 Temps de lecture</span>
+            <span class="fstat-val">17h</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-label">👀 Sujets vus</span>
+            <span class="fstat-val">192</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-label">📝 Sujets créés</span>
+            <span class="fstat-val">12</span>
+          </div>
+          <div class="fstat">
+            <span class="fstat-label">✅ Solutions</span>
+            <span class="fstat-val">5</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ARTICLES -->
+    <main>
+      <div class="articles-header">
+        <div class="articles-count">
+          <span id="count-shown">7</span> articles affichés
+        </div>
+      </div>
+
+      <!-- Article 1 -->
+      <article class="article-card shown" data-cat="dolibarr">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat dolibarr">Dolibarr</span>
+            <span class="article-date">Oct 2024 — Déc 2025</span>
+            <span class="article-read-time">⏱ 5 min</span>
+          </div>
+          <h2>Dolibarr v18 → v22 : Évolutions Majeures et Impact sur les Modules Personnalisés</h2>
+          <p class="article-intro">
+            Analyse des changements structurels introduits sur quatre versions majeures de l'ERP open-source Dolibarr.
+            Quelles nouvelles API, quels hooks et quelles ruptures de compatibilité peuvent affecter vos modules custom ?
+          </p>
+          <div class="article-body" id="body-1">
+            <h3>Contexte</h3>
+            <p>
+              Depuis mon arrivée en alternance chez Emdelen en septembre 2024, j'ai été immédiatement confronté à la nécessité de maintenir des modules PHP compatibles avec les dernières versions de Dolibarr. La veille sur les releases notes GitHub est donc devenue une routine hebdomadaire.
+            </p>
+            <h3>Principales évolutions v18 → v22</h3>
+            <ul>
+              <li><strong>Système de Hooks renforcé :</strong> introduction de nouveaux points d'accroche dans les objets métier (Commande, Facture, Projet), permettant d'éviter les patches directs du core.</li>
+              <li><strong>API REST enrichie :</strong> de nombreux endpoints ont été stabilisés et documentés, rendant les intégrations tierces plus robustes.</li>
+              <li><strong>Réécriture partielle du moteur de droits :</strong> modifications dans la gestion des <code>$user->rights</code>, avec impact sur les modules qui surchargeaient les permissions.</li>
+              <li><strong>Nouvelles Extrafields :</strong> possibilité d'attacher des champs additionnels à davantage d'objets, avec support amélioré dans les formulaires générés automatiquement.</li>
+              <li><strong>Performance :</strong> optimisation des requêtes SQL dans les listes longues, réduction des N+1 queries dans les agendas et projets.</li>
+            </ul>
+            <div class="highlight">
+              💡 Conseil pratique : avant toute mise à jour majeure de Dolibarr, toujours tester les modules custom sur un environnement de staging avec la nouvelle version, en activant le mode debug <code>define('MAIN_CORE_DEBUG', 1)</code>.
+            </div>
+            <h3>Impact sur mes modules</h3>
+            <p>
+              Lors de la mise à jour vers v18 puis v22, j'ai dû réviser la gestion des hooks dans le Module Générique Emdelen pour utiliser les nouveaux points d'accroche sans modifier le core. J'ai également mis à jour les requêtes SQL pour m'aligner avec les changements de schéma des tables de projets.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Hooks</span>
+              <span class="atag">PHP</span>
+              <span class="atag">Migration</span>
+              <span class="atag">API REST</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-1', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card shown" data-cat="mobile">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat mobile">Mobile</span>
+            <span class="article-date">2025</span>
+            <span class="article-read-time">⏱ 4 min</span>
+          </div>
+          <h2>DoliDroid : Accéder à Dolibarr depuis un Smartphone Android</h2>
+          <p class="article-intro">
+            Découverte de DoliDroid, l'application Android communautaire qui permet d'utiliser Dolibarr en mobilité. Analyse des fonctionnalités, limites et cas d'usage pertinents en contexte professionnel.
+          </p>
+          <div class="article-body" id="body-2">
+            <h3>Présentation</h3>
+            <p>
+              DoliDroid est une application Android développée et maintenue par des membres de la communauté Dolibarr. Elle offre une interface mobile adaptée pour accéder aux principales fonctionnalités de l'ERP depuis un smartphone.
+            </p>
+            <h3>Fonctionnalités couvertes</h3>
+            <ul>
+              <li>Consultation et création de devis, factures, commandes</li>
+              <li>Accès au CRM (tiers, contacts)</li>
+              <li>Gestion des agendas et des événements</li>
+              <li>Pointage de temps sur des projets</li>
+              <li>Notifications push pour les tâches et alertes</li>
+            </ul>
+            <h3>Limites identifiées</h3>
+            <p>
+              Les modules personnalisés ne sont pas automatiquement accessibles depuis DoliDroid : l'application ne supporte que les modules officiels de Dolibarr. Les extrafields ajoutés via des modules custom ne s'affichent pas nativement.
+            </p>
+            <div class="highlight">
+              🔍 Piste d'amélioration : utiliser l'API REST de Dolibarr pour exposer les données des modules custom, ce qui permettrait d'y accéder depuis une application mobile maison ou depuis des outils no-code comme n8n.
+            </div>
+            <h3>Pertinence pour Emdelen</h3>
+            <p>
+              La mobilité est un axe à explorer pour les chefs de projet qui suivent plusieurs chantiers en déplacement. La combinaison DoliDroid + API REST maison pourrait répondre à ce besoin à terme.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Android</span>
+              <span class="atag">Mobilité</span>
+              <span class="atag">API REST</span>
+              <span class="atag">Open Source</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-2', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card shown" data-cat="securite">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat securite">Sécurité</span>
+            <span class="article-date">2025</span>
+            <span class="article-read-time">⏱ 6 min</span>
+          </div>
+          <h2>Sécuriser ses Modules Dolibarr : Injections SQL, XSS et Gestion des Droits</h2>
+          <p class="article-intro">
+            Lorsqu'on développe des modules pour un ERP partagé par toute une équipe, la sécurité n'est pas optionnelle. Tour d'horizon des vulnérabilités les plus fréquentes et des bonnes pratiques défensives en PHP/Dolibarr.
+          </p>
+          <div class="article-body" id="body-3">
+            <h3>Injections SQL</h3>
+            <p>
+              Dolibarr expose sa classe <code>DoliDB</code> qui intègre des méthodes d'échappement. Il est impératif de ne jamais interpoler directement des variables dans les requêtes SQL.
+            </p>
+            <ul>
+              <li>Utiliser <code>$db->escape($var)</code> pour tout input utilisateur</li>
+              <li>Utiliser <code>$db->sanitize($var)</code> pour les noms de colonnes dynamiques</li>
+              <li>Préférer les requêtes préparées avec <code>llxSafe()</code> quand disponible</li>
+            </ul>
+            <h3>Cross-Site Scripting (XSS)</h3>
+            <p>
+              L'affichage de données issues de la base dans des formulaires HTML doit toujours passer par une fonction d'échappement.
+            </p>
+            <ul>
+              <li><code>dol_htmlentities($val)</code> pour tout affichage de valeur en HTML</li>
+              <li><code>dol_escape_js($val)</code> pour les valeurs injectées en JavaScript</li>
+              <li>Ne jamais utiliser <code>echo $_POST['champ']</code> sans sanitization</li>
+            </ul>
+            <div class="highlight">
+              ⚠️ Vulnérabilité fréquente : les champs de formulaire pré-remplis avec des données de la BDD sans <code>dol_htmlentities()</code> sont une source classique de XSS dans les modules custom.
+            </div>
+            <h3>Gestion des droits</h3>
+            <p>
+              Tout module Dolibarr doit définir ses propres droits dans le fichier <code>mymodule.class.php</code> et vérifier systématiquement ces droits en début de chaque script d'action avec <code>accessforbidden()</code>.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">PHP</span>
+              <span class="atag">SQL</span>
+              <span class="atag">XSS</span>
+              <span class="atag">Sécurité</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-3', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-card shown" data-cat="dolibarr">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat dolibarr">Dolibarr</span>
+            <span class="article-date">Nov 2024</span>
+            <span class="article-read-time">⏱ 4 min</span>
+          </div>
+          <h2>Hooks et Triggers Dolibarr : Architecture Propre sans Toucher au Core</h2>
+          <p class="article-intro">
+            Le système de hooks de Dolibarr permet d'étendre les comportements de l'ERP sans modifier son code source. Comprendre ce mécanisme est fondamental pour produire des modules robustes et pérennes.
+          </p>
+          <div class="article-body" id="body-4">
+            <h3>Différence entre Hook et Trigger</h3>
+            <p>
+              Un <strong>Hook</strong> est un point d'injection dans l'affichage ou le traitement, appelé par Dolibarr à des moments clés du rendu. Un <strong>Trigger</strong> est déclenché lors d'actions métier (création, modification, suppression d'objets) et s'exécute après validation.
+            </p>
+            <h3>Créer un Hook</h3>
+            <ul>
+              <li>Créer la classe <code>InterfaceMyHook</code> dans <code>/core/triggers/interface_mymodule.class.php</code></li>
+              <li>Implémenter la méthode <code>runWorkflow()</code> ou <code>executeHooks()</code></li>
+              <li>Déclarer le hook dans le module descriptor</li>
+            </ul>
+            <div class="highlight">
+              💡 Bonne pratique : toujours vérifier l'action courante avec <code>$action</code> et le contexte avec <code>$hookmanager->contextarray</code> avant d'agir, pour éviter des effets de bord indésirables.
+            </div>
+            <h3>Application dans mes modules</h3>
+            <p>
+              Dans le Module Générique Emdelen, j'utilise des hooks pour injecter des champs supplémentaires dans les fiches fournisseurs et dans les formulaires de projets, sans modifier les templates natifs de Dolibarr.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Hooks</span>
+              <span class="atag">Triggers</span>
+              <span class="atag">Architecture</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-4', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-card shown" data-cat="erp">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat erp">ERP & Gestion</span>
+            <span class="article-date">Jan 2025</span>
+            <span class="article-read-time">⏱ 5 min</span>
+          </div>
+          <h2>Dolibarr vs Odoo : Quel ERP Open Source pour les PME en 2025 ?</h2>
+          <p class="article-intro">
+            Analyse comparative des deux leaders des ERP open source à destination des PME françaises. Fonctionnalités, coût total de possession, facilité de personnalisation et taille de communauté.
+          </p>
+          <div class="article-body" id="body-5">
+            <h3>Dolibarr</h3>
+            <ul>
+              <li>Code PHP natif, très accessible pour un développeur web</li>
+              <li>Installation légère, même sur un hébergement mutualisé</li>
+              <li>Communauté francophone très active</li>
+              <li>Modules sur DoliStore, nombreux en open source sur GitHub</li>
+              <li>Idéal pour les petites structures (1-50 personnes)</li>
+            </ul>
+            <h3>Odoo</h3>
+            <ul>
+              <li>Python / framework MVC maison (OWL + QWeb)</li>
+              <li>Interface bien plus moderne et cohérente</li>
+              <li>Écosystème plus large et marketplace riche</li>
+              <li>Courbe d'apprentissage plus élevée pour le développement de modules</li>
+              <li>Version Community gratuite, mais certains modules clés sont payants</li>
+            </ul>
+            <div class="highlight">
+              📌 Mon bilan : pour une entreprise comme Emdelen qui a des besoins métier spécifiques et une équipe dev interne, Dolibarr est un choix cohérent grâce à sa flexibilité et à la simplicité de sa stack technique.
+            </div>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Odoo</span>
+              <span class="atag">Dolibarr</span>
+              <span class="atag">Comparatif</span>
+              <span class="atag">PME</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-5', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="article-card shown" data-cat="dev">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat dev">Développement</span>
+            <span class="article-date">Fév 2025</span>
+            <span class="article-read-time">⏱ 4 min</span>
+          </div>
+          <h2>Git Flow en Équipe : Stratégie de Branches pour un Projet Dolibarr</h2>
+          <p class="article-intro">
+            Gérer plusieurs modules en parallèle, avec des cycles de livraison différents et une mise en production partagée, exige une stratégie de branches claire. Retour d'expérience sur l'organisation Git chez Emdelen.
+          </p>
+          <div class="article-body" id="body-6">
+            <h3>Problématique</h3>
+            <p>
+              Développer des modules Dolibarr implique des dépendances entre modules, des phases de test sur staging et des mises en production planifiées. Sans stratégie de branches, les conflits et les régressions se multiplient.
+            </p>
+            <h3>Stratégie adoptée</h3>
+            <ul>
+              <li><code>main</code> : code en production, jamais modifié directement</li>
+              <li><code>develop</code> : intégration continue, branch de référence pour les PR</li>
+              <li><code>feature/nom-module</code> : une branche par module ou fonctionnalité</li>
+              <li><code>hotfix/xxx</code> : correctifs urgents directement sur <code>main</code></li>
+            </ul>
+            <div class="highlight">
+              🔁 Workflow : <code>feature</code> → PR vers <code>develop</code> → tests staging → merge vers <code>main</code> → tag de version → déploiement.
+            </div>
+            <h3>Outils complémentaires</h3>
+            <p>
+              Utilisation de GitHub Actions pour déclencher des vérifications de syntaxe PHP (<code>php -l</code>) automatiquement à chaque push, ce qui évite de déployer du code cassé en production.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Git</span>
+              <span class="atag">GitHub</span>
+              <span class="atag">CI/CD</span>
+              <span class="atag">Workflow</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-6', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 7 -->
+      <article class="article-card shown" data-cat="dolibarr">
+        <div class="article-inner">
+          <div class="article-meta">
+            <span class="article-cat dolibarr">Dolibarr</span>
+            <span class="article-date">Mars 2025</span>
+            <span class="article-read-time">⏱ 3 min</span>
+          </div>
+          <h2>Extrafields Dolibarr : Étendre les Objets sans Modifier le Schéma Core</h2>
+          <p class="article-intro">
+            Les extrafields permettent d'ajouter des attributs personnalisés à n'importe quel objet Dolibarr (tiers, projet, facture…) sans toucher aux tables natives. Un outil puissant — à condition de bien en connaître les limites.
+          </p>
+          <div class="article-body" id="body-7">
+            <h3>Fonctionnement</h3>
+            <p>
+              Les extrafields sont stockées dans des tables suffixées <code>_extrafields</code> (ex: <code>llx_societe_extrafields</code>). Elles sont déclarées soit via l'interface administrateur de Dolibarr, soit directement dans le code du module avec la classe <code>ExtraFields</code>.
+            </p>
+            <h3>Types disponibles</h3>
+            <ul>
+              <li><strong>varchar, int, double, date</strong> : types simples</li>
+              <li><strong>select</strong> : liste déroulante avec valeurs prédéfinies</li>
+              <li><strong>link</strong> : lien vers un autre objet Dolibarr (ex: un projet)</li>
+              <li><strong>checkbox, radio</strong> : pour des options binaires ou multiples</li>
+              <li><strong>text, html</strong> : champs libres, avec éditeur WYSIWYG pour html</li>
+            </ul>
+            <div class="highlight">
+              ⚡ Astuce : déclarer les extrafields dans le code du module plutôt que via l'UI permet de les versionner avec Git et de les déployer automatiquement à l'installation du module.
+            </div>
+            <h3>Utilisation dans mes modules</h3>
+            <p>
+              J'utilise les extrafields pour stocker des données spécifiques à Emdelen sur les tiers fournisseurs (notation, catégorie interne) et sur les projets (charge prévisionnelle, référence client), sans jamais modifier les tables core de Dolibarr.
+            </p>
+          </div>
+          <div class="article-footer">
+            <div class="article-tags">
+              <span class="atag">Extrafields</span>
+              <span class="atag">PHP</span>
+              <span class="atag">MariaDB</span>
+            </div>
+            <button class="btn-expand" onclick="toggleArticle('body-7', this)">
+              Lire l'article ↓
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sources -->
+      <div class="sources-section">
+        <h3 class="sources-title">Sources &amp; Ressources utilisées</h3>
+        <div class="sources-grid">
+          <div class="source-card">
+            <div class="source-card-icon">💬</div>
+            <h4>Communauté Dolibarr</h4>
+            <p>Forum francophone et anglophone actif, wiki officiel, tickets GitHub.</p>
+            <div class="source-card-links">
+              <a href="https://www.dolibarr.fr/forum/" target="_blank">→ Forum Dolibarr FR</a>
+              <a href="https://wiki.dolibarr.org" target="_blank">→ Wiki officiel</a>
+              <a href="https://github.com/Dolibarr/dolibarr" target="_blank">→ GitHub Dolibarr</a>
+            </div>
+          </div>
+          <div class="source-card">
+            <div class="source-card-icon">🎥</div>
+            <h4>Chaînes YouTube</h4>
+            <p>Tutoriels vidéo sur Dolibarr, développement PHP et bonnes pratiques.</p>
+            <div class="source-card-links">
+              <a href="https://www.youtube.com/channel/UCqyVebuI5n73yjHRZxjzQvg" target="_blank">→ Patas Monkey</a>
+            </div>
+          </div>
+          <div class="source-card">
+            <div class="source-card-icon">📚</div>
+            <h4>Documentation officielle</h4>
+            <p>Documentation PHP, MariaDB, et références des fonctions Dolibarr.</p>
+            <div class="source-card-links">
+              <a href="https://php.net/docs.php" target="_blank">→ PHP Docs</a>
+              <a href="https://mariadb.com/kb/en/" target="_blank">→ MariaDB Knowledge Base</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact -->
+      <div class="impact-section">
+        <h3 class="impact-title">Impact sur mes Projets</h3>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <h4>Amélioration Continue</h4>
+            <p>Application des nouvelles fonctionnalités Dolibarr dans mes modules pour rester à jour.</p>
+            <ul>
+              <li>Adoption des meilleures pratiques</li>
+              <li>Optimisation des performances SQL</li>
+              <li>Compatibilité maintenue avec les nouvelles versions</li>
+            </ul>
+          </div>
+          <div class="impact-card">
+            <h4>Innovation Technique</h4>
+            <p>Intégration de solutions découvertes lors de la veille dans les modules développés.</p>
+            <ul>
+              <li>Fonctionnalités avancées (hooks, extrafields)</li>
+              <li>Intégrations API REST tierces</li>
+              <li>Système de triggers métier</li>
+            </ul>
+          </div>
+          <div class="impact-card">
+            <h4>Montée en Compétences</h4>
+            <p>Développement de nouvelles compétences techniques grâce à la veille.</p>
+            <ul>
+              <li>Techniques de développement PHP avancées</li>
+              <li>Architecture logicielle ERP</li>
+              <li>Sécurisation des applications métier</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p class="footer-copy">© 2025 <span>Rémi RUSSI</span> — Développeur Full Stack</p>
+    <div class="footer-links">
+      <a href="index.html">Portfolio</a>
+      <a href="https://github.com/ridou77" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle article body
+    function toggleArticle(id, btn) {
+      const body = document.getElementById(id);
+      const isOpen = body.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.textContent = isOpen ? 'Réduire ↑' : 'Lire l\'article ↓';
+    }
+
+    // Filter by category
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('.article-card');
+    const countEl = document.getElementById('count-shown');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let count = 0;
+        articles.forEach(a => {
+          const match = filter === 'all' || a.dataset.cat === filter;
+          a.classList.toggle('shown', match);
+          if (match) count++;
+        });
+        countEl.textContent = count;
+      });
+    });
+  </script>
+</body>
+</html>

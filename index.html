@@ -1,970 +1,727 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rémi RUSSI — Développeur Full Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+   
+  </style>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar">
-            <button id="sidebarToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+
+  <!-- ── NAVIGATION ── -->
+  <nav>
+    <a href="#a-propos" class="nav-logo">RR<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#a-propos">Accueil</a></li>
+      <li><a href="#titre-experiences">Expériences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#titre-competence">Compétences</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="a-propos">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">BTS SIO Option SLAM</div>
+        <h1 class="hero-name">
+          Rémi<br><em>RUSSI</em>
+        </h1>
+        <p class="hero-title">
+          <strong>Développeur Full Stack</strong> — Solutions logicielles &amp; Applications Métiers
+        </p>
+        <p class="hero-desc">
+          Étudiant passionné en BTS SIO, spécialisé dans le développement d'applications innovantes et la conception de solutions logicielles. En alternance chez Emdelen, je pilote des projets de développement de A à Z.
+        </p>
+        <div class="hero-cta">
+          <a href="#projets" class="btn-primary">Voir mes projets →</a>
+          <a href="#contact" class="btn-ghost">Me contacter</a>
+          <a href="img/CV_Remi_Russi.pdf" class="btn-ghost" target="_blank">📄 CV</a>
+        </div>
+      </div>
+      <div class="hero-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">
+            <strong>Années d'études</strong>
+            BTS SIO SLAM en alternance
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">
+            <strong>Technologies</strong>
+            PHP, C#, JS, MySQL &amp; plus
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">
+            <strong>Projets réalisés</strong>
+            En entreprise et à l'école
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCES ── -->
+  <section id="titre-experiences">
+    <div class="section-inner">
+      <div class="section-tag">Parcours professionnel</div>
+      <h2 class="section-title">Expériences</h2>
+
+      <div class="exp-grid">
+
+        <div class="exp-card reveal">
+          <div class="exp-company">Emdelen</div>
+          <div class="exp-date">Sept 2024 — Aujourd'hui</div>
+          <h3>Gestion de projet</h3>
+          <p>Suivi des projets de développement de modules de A à Z.</p>
+          <ul class="exp-missions">
+            <li>Expression du besoin client</li>
+            <li>Élaboration de cahier des charges</li>
+            <li>Modélisation de base de données</li>
+            <li>Développement du module</li>
+            <li>Phase de tests &amp; mise en production</li>
+            <li>Rédaction de documentation technique</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag accent">PHP</span>
+            <span class="tag accent">SQL</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-delay-1">
+          <div class="exp-company">Emdelen</div>
+          <div class="exp-date">Sept 2024 — Aujourd'hui</div>
+          <h3>Autonomie &amp; Montée en compétences</h3>
+          <p>Développement de compétences en autonomie à travers la recherche et l'auto-formation.</p>
+          <ul class="exp-missions">
+            <li>Recherche et exploration technologique</li>
+            <li>Apprentissage autonome</li>
+            <li>Résolution de problèmes complexes</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag accent">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag accent">SQL</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal reveal-delay-2">
+          <div class="exp-company">Emdelen</div>
+          <div class="exp-date">2025</div>
+          <h3>Mise à jour ERP Dolibarr</h3>
+          <p>Pilotage complet de la migration et mise à jour de l'ERP Dolibarr pour l'entreprise.</p>
+          <ul class="exp-missions">
+            <li>Gestion de l'hébergement</li>
+            <li>Sauvegarde et archivage des bases de données</li>
+            <li>Mise en production de modules externes</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag accent">Dolibarr</span>
+            <span class="tag">Linux</span>
+            <span class="tag accent">SQL</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-row">
+        <a href="img/CV_Remi_Russi.pdf" class="btn-primary" target="_blank">📄 Télécharger mon CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJETS ── -->
+  <section id="projets">
+    <div class="section-inner">
+      <div class="section-tag">Réalisations</div>
+      <h2 class="section-title">Projets</h2>
+
+      <!-- Projets Entreprise -->
+      <div class="proj-group">
+        <div class="proj-group-label">Projets Entreprise — Emdelen</div>
+        <div class="proj-grid">
+
+          <div class="proj-card reveal">
+            <div class="proj-card-img-placeholder">🔧</div>
+            <div class="proj-card-body">
+              <h4>Module Générique Emdelen</h4>
+              <ul>
+                <li>Adaptation de Dolibarr aux besoins spécifiques de l'entreprise</li>
+                <li>Éviter les modifications du core</li>
+                <li>Extrafields, widgets et fonctionnalités avancées</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">PHP</span>
+                <span class="tag accent">MariaDB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal reveal-delay-1">
+            <div class="proj-card-img-placeholder">🗓️</div>
+            <div class="proj-card-body">
+              <h4>Module Congés</h4>
+              <ul>
+                <li>Vue centralisée sur l'ensemble des congés demandés</li>
+                <li>Filtrage par projet, utilisateurs et services</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">PHP</span>
+                <span class="tag accent">MariaDB</span>
+                <span class="tag accent">CSS</span>
+                <span class="tag accent">JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal reveal-delay-1">
+            <div class="proj-card-img-placeholder">🗓️</div>
+            <div class="proj-card-body">
+              <h4>Module Silae</h4>
+              <ul>
+                <li>Export excel des abcenses respectant les normes du logiciel comptable Silae</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">PHP</span>
+                <span class="tag accent">CSS</span>
+                <span class="tag accent">JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal reveal-delay-2">
+            <div class="proj-card-img-placeholder">⭐</div>
+            <div class="proj-card-body">
+              <h4>Module Notation Fournisseurs</h4>
+              <ul>
+                <li>Notation des fournisseurs par les utilisateurs</li>
+                <li>Notations par phase de projet</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">PHP</span>
+                <span class="tag accent">MariaDB</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal reveal-delay-3">
+            <div class="proj-card-img-placeholder">📊</div>
+            <div class="proj-card-body">
+              <h4>Module Gestion de Projet / Suivi de Charge</h4>
+              <ul>
+                <li>Amélioration du suivi des projets</li>
+                <li>Vision intégrée du prévisionnel financier</li>
+                <li>Charge prévisionnelle des salariés</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">PHP</span>
+                <span class="tag accent">MariaDB</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projets École -->
+      <div class="proj-group">
+        <div class="proj-group-label">Projets École — ISITECH</div>
+        <div class="proj-grid">
+
+          <div class="proj-card reveal">
+            <div class="proj-card-img-placeholder">🧾</div>
+            <div class="proj-card-body">
+              <h4>Application de gestion de Notes de Frais</h4>
+              <ul>
+                <li>Application client lourd de gestion des notes de frais</li>
+                <li>Développée en C# avec Windows Forms</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">C#</span>
+                <span class="tag accent">.NET</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal reveal-delay-1">
+            <div class="proj-card-img-placeholder">🏥</div>
+            <div class="proj-card-body">
+              <h4>Application de Gestion Médicale</h4>
+              <ul>
+                <li>Application de gestion médicale en C#</li>
+                <li>Architecture ASP.NET Core MVC</li>
+                <li>Authentification &amp; Entity Framework Core</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">C#</span>
+                <span class="tag accent">ASP.NET</span>
+                <span class="tag accent">SQL Server</span>
+                <span class="tag accent">EF Core</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal">
+            <div class="proj-card-img-placeholder">🧾</div>
+            <div class="proj-card-body">
+              <h4>Application de Gestion de Stock d'entrepot Pharmaceutique</h4>
+              <ul>
+                <li>Application web React</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">Typescript</span>
+                <span class="tag accent">React</span>
+                <span class="tag accent">Vite</span>
+                <span class="tag accent">Firebase auth + hosting</span>
+                <span class="tag accent">Firetore</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card reveal">
+            <div class="proj-card-img-placeholder">🧾</div>
+            <div class="proj-card-body">
+              <h4>Application mobile</h4>
+              <ul>
+                <li>Application CRM pour Délégués Pharmaceutiques</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag accent">React native (Expo)</span>
+                <span class="tag accent">Typescript</span>
+                <span class="tag accent">Firebase</span>
+                <span class="tag accent">Firestore</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPÉTENCES ── -->
+  <section id="titre-competence">
+    <div class="section-inner">
+      <div class="section-tag">Maîtrise technique</div>
+      <h2 class="section-title">Compétences</h2>
+
+      <div class="skills-layout">
+
+        <div class="skill-group reveal">
+          <div class="skill-group-header">
+            <span class="skill-icon">💻</span>
+            <h3>Langages</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">HTML</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">CSS</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">PHP</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">C#</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-1">
+          <div class="skill-group-header">
+            <span class="skill-icon">🗄️</span>
+            <h3>Bases de données</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">MariaDB / MySQL</span>
+              <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">SQL Server</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-2">
+          <div class="skill-group-header">
+            <span class="skill-icon">🛠️</span>
+            <h3>Outils &amp; Frameworks</h3>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Git / GitHub</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">.NET Framework</span>
+              <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row">
+              <span class="skill-name">Entity Framework</span>
+              <span class="skill-pct">65%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="skills-dl-row">
+        <a href="img/BTS_SIO_Annexe_VI.5_Epreuve E5 - Tableau de synthe.se_2026.xlsx" class="btn-ghost">
+          📥 Tableau de compétences BTS SIO
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VEILLE TECHNOLOGIQUE ── -->
+  <section id="veille">
+    <div class="section-inner">
+      <div class="section-tag">Curiosité &amp; apprentissage</div>
+
+      <div class="veille-hero">
+        <div class="veille-intro">
+          <h2>Veille<br>Technologique</h2>
+          <p>
+            Suivi actif de l'écosystème Dolibarr et des tendances du développement web.
+            Participation à la communauté, expérimentation pratique et application directe dans mes modules.
+          </p>
+          <a href="veille.html" class="btn-primary">Voir tous les articles →</a>
+        </div>
+        <div class="veille-stats">
+          <div class="veille-stat reveal">
+            <span class="veille-stat-num">99</span>
+            <span class="veille-stat-label">Jours visités sur le forum</span>
+          </div>
+          <div class="veille-stat reveal reveal-delay-1">
+            <span class="veille-stat-num">17h</span>
+            <span class="veille-stat-label">Temps de lecture</span>
+          </div>
+          <div class="veille-stat reveal reveal-delay-2">
+            <span class="veille-stat-num">192</span>
+            <span class="veille-stat-label">Sujets consultés</span>
+          </div>
+          <div class="veille-stat reveal reveal-delay-3">
+            <span class="veille-stat-num">5</span>
+            <span class="veille-stat-label">Solutions apportées</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-methods">
+        <div class="method-step reveal">
+          <div class="method-num">01</div>
+          <h4>Collecte</h4>
+          <p>Consultation quotidienne des forums, wikis et flux GitHub. Lecture approfondie hebdomadaire.</p>
+        </div>
+        <div class="method-step reveal reveal-delay-1">
+          <div class="method-num">02</div>
+          <h4>Classification</h4>
+          <p>Tri par pertinence, sauvegarde des articles clés, synthèse mensuelle des tendances.</p>
+        </div>
+        <div class="method-step reveal reveal-delay-2">
+          <div class="method-num">03</div>
+          <h4>Expérimentation</h4>
+          <p>Tests pratiques des nouvelles fonctionnalités dans des projets personnels ou de lab.</p>
+        </div>
+        <div class="method-step reveal reveal-delay-3">
+          <div class="method-num">04</div>
+          <h4>Application</h4>
+          <p>Intégration des nouveautés dans mes modules pour rester compatible avec les dernières versions.</p>
+        </div>
+      </div>
+
+      <div class="veille-previews">
+        <div class="veille-preview-card reveal">
+          <div class="preview-date">Oct 2024 — Déc 2025</div>
+          <h4>Dolibarr v18 → v22 : Évolutions Majeures</h4>
+          <p>Analyse des changements structurels impactant les modules personnalisés sur 4 versions majeures de l'ERP.</p>
+          <div class="tag-row">
+            <span class="tag accent">Hooks</span>
+            <span class="tag">Performance</span>
+          </div>
+        </div>
+        <div class="veille-preview-card reveal reveal-delay-1">
+          <div class="preview-date">2025</div>
+          <h4>DoliDroid : Dolibarr sur Mobile</h4>
+          <p>Création communautaire d'une application Android pour accéder à l'ERP depuis un smartphone.</p>
+          <div class="tag-row">
+            <span class="tag">Mobile</span>
+            <span class="tag accent">Android</span>
+          </div>
+        </div>
+        <div class="veille-preview-card reveal reveal-delay-2">
+          <div class="preview-date">2025</div>
+          <h4>Sécurité dans les Modules Dolibarr</h4>
+          <p>Bonnes pratiques de sécurisation des modules custom : injections SQL, XSS, gestion des droits.</p>
+          <div class="tag-row">
+            <span class="tag accent">Sécurité</span>
+            <span class="tag">PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="veille-cta-row">
+        <a href="veille.html" class="btn-ghost">Explorer toute la veille technologique →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMATION ── -->
+  <section id="formation">
+    <div class="section-inner">
+      <div class="section-tag">Parcours académique</div>
+      <h2 class="section-title">Formation</h2>
+
+      <div class="formation-layout">
+
+        <div class="formation-card reveal">
+          <h3>BTS SIO<br>Option SLAM</h3>
+          <div class="subtitle">Services Informatiques aux Organisations</div>
+          <p>
+            Le BTS SIO option SLAM forme des professionnels capables de concevoir, développer et maintenir des applications informatiques. Cette formation me permet d'acquérir des compétences techniques solides en développement logiciel.
+          </p>
+          <div class="formation-features">
+            <div class="formation-feature">
+              <span class="icon">💻</span>
+              <span>Développement d'applications</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">🗄️</span>
+              <span>Conception et exploitation de bases de données</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">🔧</span>
+              <span>Maintenance applicative et support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="formation-card reveal reveal-delay-1">
+          <h3>ISITECH</h3>
+          <div class="subtitle">École Supérieure d'Informatique</div>
+          <p>
+            ISITECH est une école spécialisée dans l'informatique proposant des formations adaptées aux besoins du marché, avec un fort accent sur la pratique et les projets concrets en entreprise.
+          </p>
+          <div class="formation-features">
+            <div class="formation-feature">
+              <span class="icon">🏢</span>
+              <span>Formation en alternance</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">👨‍💼</span>
+              <span>Intervenants professionnels</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">💼</span>
+              <span>Projets réels d'entreprise</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">🎯</span>
+              <span>Formation orientée métier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-inner">
+      <div class="section-tag">Poursuite d'études</div>
+
+      <div class="formation-layout">
+
+
+        <div class="formation-card reveal reveal-delay-1">
+          <h3>Polytech</h3>
+          <div class="subtitle">École d'ingénieur</div>
+          <p>
+            Le réseau Polytech regroupe 16 écoles d'ingénieurs et 7 écoles associées. 
+            Toutes sont des écoles publiques universitaires relevant du ministère de l'Enseignement supérieur, 
+            de la Recherche et de l'Innovation et délivrant des diplômes d'ingénieur habilités par la Commission des Titres d'Ingénieur (CTI).
+          </p>
+          <div class="formation-features">
+            <div class="formation-feature">
+              <span class="icon">🏢</span>
+              <span>Formation : Ingénieur Informatique données et Usage</span>
+            </div>
+            <div class="formation-feature">
+              <span class="icon">💼</span>
+              <span>Accrédité par la Commission des Titres d'ingénieurs (CTI)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-tag">Disponible</div>
+      <h2 class="section-title">Contactez-moi</h2>
+
+      <div class="contact-layout">
+
+        <div class="contact-info reveal">
+          <h3>Mes coordonnées</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <a href="mailto:remirusi@gmail.com">remirusi@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <a href="tel:+33673067928">06 73 06 79 28</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/" target="_blank">LinkedIn — Rémi RUSSI</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💻</div>
+            <a href="https://github.com/ridou77" target="_blank">GitHub — ridou77</a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <form action="https://formspree.io/f/xlgvnryr" method="POST" class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom *</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;">
+              Envoyer le message →
             </button>
-            <h1>Portfolio Rémi RUSSI</h1>
-            <ul>
-                <li><a href="#a-propos" class="active">Acceuil</a></li>
-                <li><a href="#titre-experiences">Experiences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#titre-competence">Competence</a></li>
-                <li><a href="#veille">Veille Technologique</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#contact">Contactez-moi</a></li>
-            </ul>
-        </nav>
-
-        <nav id="sidebar" class="sidebar">
-            <ul>
-                <li><a href="#" class="active">Acceuil</a></li>
-                <li><a href="#titre-experiences">Experiences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#titre-competence">Competence</a></li>
-                <li><a href="#veille">Veille Technologique</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#contact">Contactez-moi</a></li>
-            </ul>
-        </nav>
-
-
-    </header>
-
-    <main>
-        <div id="a-propos"></div>
-        <section class="a-propos-box">
-            <div class="a-propos-container">
-                <!-- En-tête avec photo -->
-                <div class="a-propos-header">
-                    <div class="profile-image-container">
-                        <div class="profile-ring"></div>
-                        <img src="img/image-header.png" alt="Rémi RUSSI" class="profile-image">
-                    </div>
-                    <div class="header-text">
-                        <h1 class="hero-name">Rémi RUSSI</h1>
-                        <p class="hero-title">Développeur Full Stack</p>
-                        <span class="hero-badge">BTS SIO Option SLAM - Solutions logicielles et Application
-                            Metiers</span>
-                    </div>
-                </div>
-
-                <!-- Cards principales -->
-                <div class="a-propos-cards">
-                    <div class="about-card">
-                        <div class="card-icon">👨‍💻</div>
-                        <h3>Qui suis-je ?</h3>
-                        <p>Étudiant passionné en deuxième année de BTS SIO, spécialisé dans le développement
-                            d'applications
-                            innovantes et la conception de solutions logicielles.</p>
-                    </div>
-
-                    <div class="about-card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Ma Spécialité</h3>
-                        <p>Développement web et mobile, gestion de bases de données, et création d'applications métier
-                            performantes.</p>
-                    </div>
-                </div>
-
-                <!-- Statistiques -->
-                <div class="stats-container">
-                    <div class="stat-box">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Année d'études</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Technologies</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">7+</div>
-                        <div class="stat-label">Projets réalisés</div>
-                    </div>
-                </div>
-
-                <!-- Boutons d'action -->
-                <div class="cta-section">
-                    <a href="#projets" class="btn-primary">
-                        <span>Voir mes projets</span>
-                        <span>→</span>
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        <span>Me contacter</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="experiences-box" id="titre-experiences">
-            <h2>Expériences & CV</h2>
-
-            <div class="experiences-container">
-                <div class="timeline">
-
-                    <!-- Expérience 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <div class="experience-title-group">
-                                    <h3 class="experience-title">Gestion de projet</h3>
-                                    <p class="experience-company">Emdelen</p>
-                                </div>
-                            </div>
-                            <span class="experience-date">Sept 2024 - Aujourd'hui</span>
-                            <p class="experience-description">
-                                Suivi des projets de développement de modules de A à Z
-                            </p>
-                            <div class="experience-tasks">
-                                <h4>Missions principales :</h4>
-                                <ul>
-                                    <li>Expression du besoin client</li>
-                                    <li>Élaboration de cahier des charges</li>
-                                    <li>Modélisation de base de données</li>
-                                    <li>Développement du module</li>
-                                    <li>Phase de tests</li>
-                                    <li>Mise en Production</li>
-                                    <li>Mise à jour régulière des modules</li>
-                                    <li>Rédaction de documentation technique</li>
-                                </ul>
-                            </div>
-                            <div class="experience-technologies">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <!-- Expérience 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <div class="experience-title-group">
-                                    <h3 class="experience-title">Autonomie</h3>
-                                    <p class="experience-company">Emdelen</p>
-                                </div>
-                            </div>
-                            <span class="experience-date">Sept 2024 - Aujourd'hui</span>
-                            <div class="experience-tasks">
-                                <h4>Missions principales :</h4>
-                                <ul>
-                                    <li>Développement de compétences grâce à de la recherche</li>
-                                    <li>Apprendre sans être épaulé</li>
-                                </ul>
-                            </div>
-                            <div class="experience-technologies">
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">MySQL</span>
-                            </div>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                    <!-- Expérience 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="experience-header">
-                                <div class="experience-title-group">
-                                    <h3 class="experience-title">Mise à jour d'ERP</h3>
-                                    <p class="experience-company">Emdelen</p>
-                                </div>
-                            </div>
-                            <span class="experience-date">2025</span>
-                            <p class="experience-description">
-                                Mise à jour de l'ERP Dolibarr pour l'entreprise Emdelen
-                            </p>
-                            <div class="experience-tasks">
-                                <h4>Réalisations :</h4>
-                                <ul>
-                                    <li>Gestion de l'hébergement</li>
-                                    <li>Sauvegarde et archivage de bases de données</li>
-                                    <li>Mise en production de modules externes</li>
-                                </ul>
-                            </div>
-                            <div class="experience-technologies">
-                                <span class="tech-tag">Dolibarr</span>
-                                <span class="tech-tag">Linux</span>
-                                <span class="tech-tag">MySQL</span>
-                            </div>
-                        </div>
-                        <div class="timeline-dot"></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="cv-download-section">
-                <p class="cv-intro">Découvrez mon parcours professionnel</p>
-                <a href="img/CV_Remi_Russi.pdf" download="CV_Remi_Russi.pdf" class="btn_cv_experience">
-                    <span>📄</span>
-                    <span>Télécharger mon CV</span>
-                </a>
-            </div>
-
-        </section>
-
-        <section class="projet-global" id="projets">
-            <h2>Projets</h2>
-
-            <!-- Projets Entreprise -->
-            <div class="projet-entreprise">
-                <h3>Projets Entreprise</h3>
-                <div class="projet-entreprise-grid">
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Module Générique Emdelen</h4>
-                            <p class="projet-card-description">
-                                - Adaptation de Dolibarr aux besoins spécifiques à Emdelen <br><br>
-                                - Éviter les modifications du core ou du moins de les limiter <br><br>
-                                - Ajout de d'extrafield, widget et autres fonctionnalités <br><br>
-                            </p>
-                            <div class="projet-card-technologies">
-                                <a href="https://www.php.net/docs.php" target="_blank">
-                                    <span class="tech-badge">PHP</span>
-                                </a>
-                                <a href="https://mariadb.org/" target="_blank" rel="noopener noreferrer">
-                                    <span class="tech-badge">MariaDb</span>
-                                </a>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Module Congés</h4>
-                            <p class="projet-card-description">
-                                - Offrir une vue centralisée sur l'ensemble des congés demandés <br><br>
-                                - Vue par projet, utilisateurs, et par services<br>
-                            </p>
-                            <div class="projet-card-technologies">
-                                <a href="https://www.php.net/docs.php" target="_blank">
-                                    <span class="tech-badge">PHP</span>
-                                </a>
-                                <a href="https://mariadb.org/" target="_blank">
-                                    <span class="tech-badge">MariaDb</span>
-                                </a>
-                                <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank">
-                                    <span class="tech-badge">CSS</span>
-                                </a>
-                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-                                    <span class="tech-badge">JavaScript</span>
-                                </a>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Module Notation fournisseurs</h4>
-                            <p class="projet-card-description">
-                                - Permet aux utilisateurs de noter les différents fournisseurs<br><br>
-                                - Notations par phase de projet<br>
-                            </p>
-                            <div class="projet-card-technologies">
-                                <a href="https://www.php.net/docs.php" target="_blank">
-                                    <span class="tech-badge">PHP</span>
-                                </a>
-                                <a href="https://mariadb.org/" target="_blank" rel="noopener noreferrer">
-                                    <span class="tech-badge">MariaDb</span>
-                                </a>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/Emdelen.png" alt="Dolibarr" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Module de gestion de projet / suivi de charge</h4>
-                            <p class="projet-card-description">
-                                - Améliorer du suivi des projets<br><br>
-                                - vision intégrée du prévisionnel en relation avec les objectifs financiers<br><br>
-                                - Charge prévisionnelle des salariés<br>
-                            </p>
-                            <div class="projet-card-technologies">
-                                <span class="tech-badge">PHP</span>
-                                <span class="tech-badge">MariaDb</span>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="ligne-horizontale-projet"></div>
-
-            <!-- Projets École -->
-            <div class="projet-ecole">
-                <h3>Projets École</h3>
-                <div class="projet-ecole-grid">
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/isitech.webp" alt="Projet école" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Application de note de frais</h4>
-                            <p class="projet-card-description">
-                                Application client lourd de gestion des notes de frais développée en C# avec Windows
-                                Forms.
-                            </p>
-                            <div class="projet-card-technologies">
-                                <a href="https://dotnet.microsoft.com/fr-fr/languages/csharp" target="_blank">
-                                    <span class="tech-badge">C#</span>
-                                </a>
-                                <a href="https://www.php.net/docs.php" target="_blank">
-                                    <span class="tech-badge">.NET</span>
-                                </a>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="projet-card">
-                        <div class="projet-card-header">
-                            <img src="img/isitech.webp" alt="Projet école" class="projet-card-logo">
-                        </div>
-                        <div class="projet-card-body">
-                            <h4 class="projet-card-title">Application de gestion médicale</h4>
-                            <p class="projet-card-description">
-                                Application de gestion médicale développée en C# avec APS .NET Core MVC.
-                            </p>
-                            <div class="projet-card-technologies">
-                                <a href="https://dotnet.microsoft.com/fr-fr/languages/csharp" target="_blank">
-                                    <span class="tech-badge">C#</span>
-                                </a>
-                                <a href="https://www.php.net/docs.php" target="_blank">
-                                    <span class="tech-badge">.NET</span>
-                                </a>
-                                <a href="https://learn.microsoft.com/fr-fr/sql/sql-server/?view=sql-server-ver17"
-                                    target="_blank">
-                                    <span class="tech-badge">SQL Server</span>
-                                </a>
-                                <a href="https://learn.microsoft.com/fr-fr/ef/" target="_blank">
-                                    <span class="tech-badge">Entity Framework Core</span>
-                                </a>
-                                <a href="https://learn.microsoft.com/fr-fr/aspnet/identity/overview/getting-started/introduction-to-aspnet-identity"
-                                    target="_blank">
-                                    <span class="tech-badge">ASP.NET Identity</span>
-                                </a>
-                            </div>
-                            <!-- <div class="projet-card-footer">
-                                <a href="#" class="projet-btn projet-btn-primary">Voir détails</a>
-                            </div> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="competence-box" id="titre-competence">
-            <h2>Compétences</h2>
-
-            <div class="competence-container">
-                <!-- Langages de programmation -->
-                <div class="competence-category">
-                    <div class="category-header">
-                        <span class="category-icon">💻</span>
-                        <h3>Langages</h3>
-                    </div>
-                    <div class="competence-grid">
-
-                        <div class="skill-card">
-                            <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/html-logo.png" alt="HTML" class="skill-logo">
-                                </div>
-                                <h4>HTML</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 90%"></div>
-                                </div>
-                                <span class="skill-percentage">90%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/css-logo-vector.svg" alt="CSS" class="skill-logo">
-                                </div>
-                                <h4>CSS</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 85%"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://dotnet.microsoft.com/fr-fr/languages/csharp" class="skill-card-link"
-                                target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/Logo_C_sharp.svg.png" alt="C#" class="skill-logo">
-                                </div>
-                                <h4>C#</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 75%"></div>
-                                </div>
-                                <span class="skill-percentage">75%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://www.php.net/docs.php" class="skill-card-link" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/PHP-logo.png" alt="PHP" class="skill-logo">
-                                </div>
-                                <h4>PHP</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 85%"></div>
-                                </div>
-                                <span class="skill-percentage">85%</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bases de données -->
-                <div class="competence-category">
-                    <div class="category-header">
-                        <span class="category-icon">🗄️</span>
-                        <h3>Bases de données</h3>
-                    </div>
-                    <div class="competence-grid">
-                        <div class="skill-card">
-                            <a href="https://mariadb.org/" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/sql-logo.png" alt="SQL" class="skill-logo">
-                                </div>
-                                <h4>MariaDb / MySQL</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 80%"></div>
-                                </div>
-                                <span class="skill-percentage">80%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://learn.microsoft.com/fr-fr/sql/sql-server/?view=sql-server-ver17"
-                                target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <img src="img/sql-logo.png" alt="SQL Server" class="skill-logo">
-                                </div>
-                                <h4>SQL Server</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 70%"></div>
-                                </div>
-                                <span class="skill-percentage">70%</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outils & Frameworks -->
-                <div class="competence-category">
-                    <div class="category-header">
-                        <span class="category-icon">🛠️</span>
-                        <h3>Outils & Frameworks</h3>
-                    </div>
-                    <div class="competence-grid">
-                        <div class="skill-card">
-                            <a href="https://github.com/" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <span class="skill-text-logo">Git</span>
-                                </div>
-                                <h4>Git / GitHub</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 75%"></div>
-                                </div>
-                                <span class="skill-percentage">75%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://learn.microsoft.com/fr-fr/dotnet/" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <span class="skill-text-logo">.NET</span>
-                                </div>
-                                <h4>.NET Framework</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 70%"></div>
-                                </div>
-                                <span class="skill-percentage">70%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <span class="skill-text-logo">JS</span>
-                                </div>
-                                <h4>JavaScript</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 65%"></div>
-                                </div>
-                                <span class="skill-percentage">65%</span>
-                            </a>
-                        </div>
-
-                        <div class="skill-card">
-                            <a href="https://learn.microsoft.com/fr-fr/ef/" target="_blank">
-                                <div class="skill-logo-wrapper">
-                                    <span class="skill-text-logo">EF</span>
-                                </div>
-                                <h4>Entity Framework</h4>
-                                <div class="skill-level">
-                                    <div class="skill-bar" style="--level: 65%"></div>
-                                </div>
-                                <span class="skill-percentage">65%</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="tableau-download-section">
-                <a href="img/BTS_SIO_Annexe_VI.5_Epreuve E5 - Tableau de synthe.se_2026.xlsx" download="tableau_competences_remi_russi.xlsx" class="btn-tableau-download">
-                    <span>Télécharger le tableau de compétences du BTS SIO</span>
-                </a>
-            </div>
-
-        </section>
-
-        <!-- NOUVELLE SECTION : VEILLE TECHNOLOGIQUE -->
-        <section class="veille-box" id="veille">
-            <h2>Veille Technologique</h2>
-
-            <div class="veille-themes">
-                <div class="themes-grid">
-                    <div class="theme-card">
-                        <div class="theme-icon"></div>
-                        <img class="img-dolibarr" src="img/dolibarr.png" alt="">
-                        <h4>Dolibarr</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="veille-container">
-                <div class="veille-intro">
-                    <p>Ma démarche de veille technologique pour rester à jour
-                        avec les dernières innovations de cet ERP</p>
-                </div>
-
-                <!-- Sources de veille -->
-                <div class="veille-sources">
-                    <h3>Sources de Veille</h3>
-                    <div class="sources-grid">
-                        <div class="source-card">
-                            <div class="source-icon">📰</div>
-                            <h4>Sites Web Spécialisés</h4>
-                            <ul>
-                                <a href="https://www.dolibarr.fr/forum/" target="_blank">
-                                    <li>Forum Dolibarr</li>
-                                </a>
-                                <a href="https://wiki.dolibarr.org/index.php/Home" target="_blank">
-                                    <li>Wiki Dolibarr</li>
-                                </a>
-                            </ul>
-                        </div>
-
-                        <div class="source-card">
-                            <div class="source-icon">🎥</div>
-                            <h4>Chaînes YouTube</h4>
-                            <ul>
-                                <a href="https://www.youtube.com/channel/UCqyVebuI5n73yjHRZxjzQvg" target="_blank">
-                                    <li>Patas Monkey</li>
-                                </a>
-                            </ul>
-                        </div>
-
-                        <div class="source-card">
-                            <div class="source-icon">📚</div>
-                            <h4>Open Source</h4>
-                            <ul>
-                                <a href="https://github.com/Dolibarr/dolibarr" target="_blank">
-                                    <li>Github Dolibarr</li>
-                                </a>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Méthodes de veille -->
-                <div class="veille-methodes">
-                    <h3>Méthode de Veille</h3>
-                    <div class="methodes-timeline">
-                        <div class="methode-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Collecte Quotidienne</h4>
-                                <p>Quotidien - Consultation rapide des flux</p>
-                                <p>hebdommadaire - Lecture approfoncide des articles sauvegardés</p>
-                                <p>Mensuel - Synthèse et analyse des tendances</p>
-                            </div>
-                        </div>
-
-                        <div class="methode-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Classification</h4>
-                                <p>Tri des informations par pertinence et sauvegarde des articles intéressants</p>
-                            </div>
-                        </div>
-
-                        <div class="methode-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Expérimentation</h4>
-                                <p>Tests pratiques des nouvelles technologies dans des projets personnels</p>
-                            </div>
-                        </div>
-
-                        <div class="methode-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Application des modifications</h4>
-                                <p>Adaptations de mes modules avec les nouvautées pour avoir un travail prêt
-                                    à etre utilisé, peu importe la version de l'ERP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Impact sur projets/apprentissage -->
-                <div class="veille-impact">
-                    <h3>Impact sur mes Projets & Apprentissage</h3>
-                    <div class="impact-grid">
-                        <div class="impact-card">
-                            <h4>Amélioration Continue</h4>
-                            <p>Application des nouvelles fonctionnalités Dolibarr dans mes modules pour rester à jour avec les dernières versions de l'ERP</p>
-                            <ul class="impact-list">
-                                <li>Adoption des meilleures pratiques</li>
-                                <li>Optimisation des performances</li>
-                            </ul>
-                        </div>
-
-                        <div class="impact-card">
-                            <h4>Innovation Technique</h4>
-                            <p>Intégration de solutions innovantes découvertes lors de ma veille pour enrichir les fonctionnalités des modules développés</p>
-                            <ul class="impact-list">
-                                <li>Fonctionnalités avancées</li>
-                                <li>Intégrations tierces</li>
-                                <li>Integration de hooks / trigger</li>
-                            </ul>
-                        </div>
-
-                        <div class="impact-card">
-                            <h4>Montée en Compétences</h4>
-                            <p>Développement de nouvelles compétences techniques grâce aux découvertes de la veille technologique</p>
-                            <ul class="impact-list">
-                                <li>Techniques de développement</li>
-                                <li>Architecture logicielle</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Synthèse des informations collectées -->
-                <div class="veille-synthese">
-                    <h3>Synthèse des Informations Collectées</h3>
-                    <div class="synthese-container">
-                        <div class="synthese-timeline">
-                            <div class="synthese-period">
-                                <div class="period-header">
-                                    <span class="period-date">Octobre 2024 - Décembre 2025</span>
-                                </div>
-                                <div class="synthese-content">
-                                    <h4>Dolibarr v18.0 -> v22</h4>
-                                    <p>Découverte des améliorations majeures de la version 18.0 à la v22(latest) qui pourraient impacter mes modules personnalisés</p>
-                                    <div class="synthese-tags">
-                                        <span class="synthese-tag">Hooks</span>
-                                        <span class="synthese-tag">Performance</span>
-                                    </div>
-                                </div>
-                                <div class="synthese-content">
-                                    <h4>DoliDroid</h4>
-                                    <p>Création par des membres de la communauté d'une application Android de Dolibarr</p>
-                                    <div class="synthese-tags">
-                                        <span class="synthese-tag">Portabilité</span>
-                                        <span class="synthese-tag">Adapté mobile</span>
-                                        <span class="synthese-tag">Intégration fonctions ou autres applications du téléphone</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Statistiques du Forum Dolibarr -->
-                <div class="forum-stats">
-                    <h3>Mon Activité sur le Forum Développeur Dolibarr</h3>
-                    <div class="forum-container">
-                        <div class="forum-intro">
-                            <p>Participation active à la communauté des développeurs Dolibarr pour partager mes connaissances et résoudre des problématiques techniques</p>
-                        </div>
-
-                        <div class="forum-stats-grid">
-                            <div class="forum-stat-card">
-                                <div class="forum-stat-icon">📅</div>
-                                <div class="forum-stat-number">99</div>
-                                <div class="forum-stat-label">Jours visités</div>
-                                <div class="forum-stat-desc">Présence régulière</div>
-                            </div>
-
-                            <div class="forum-stat-card">
-                                <div class="forum-stat-icon">📖</div>
-                                <div class="forum-stat-number">17h</div>
-                                <div class="forum-stat-label">Temps de lecture</div>
-                                <div class="forum-stat-desc">Apprentissage continu</div>
-                            </div>
-
-                            <div class="forum-stat-card">
-                                <div class="forum-stat-icon">👀</div>
-                                <div class="forum-stat-number">192</div>
-                                <div class="forum-stat-label">Sujets vus</div>
-                                <div class="forum-stat-desc">Large couverture</div>
-                            </div>
-
-                            <div class="forum-stat-card">
-                                <div class="forum-stat-icon">📝</div>
-                                <div class="forum-stat-number">12</div>
-                                <div class="forum-stat-label">Sujets créés</div>
-                                <div class="forum-stat-desc">Initiative</div>
-                            </div>
-
-                            <div class="forum-stat-card highlight">
-                                <div class="forum-stat-icon">✅</div>
-                                <div class="forum-stat-number">5</div>
-                                <div class="forum-stat-label">Solutions</div>
-                                <div class="forum-stat-desc">Aide à la communauté</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="formation-box" id="formation">
-            <h2>Formation</h2>
-            
-            <div class="formation-container">
-                <div class="formation-intro">
-                    <p>Découvrez ma formation actuelle et l'établissement qui m'accompagne dans mon parcours professionnel</p>
-                </div>
-
-                <!-- Section BTS SIO -->
-                <div class="formation-content">
-                    <div class="formation-main">
-                        <div class="formation-header">
-                            <div class="formation-logo">
-                                <span class="formation-icon">🎓</span>
-                            </div>
-                            <div class="formation-title-group">
-                                <h3>BTS SIO Option SLAM</h3>
-                                <p class="formation-subtitle">Services Informatiques aux Organisations</p>
-                                <span class="formation-option">Solutions Logicielles et Applications Métiers</span>
-                            </div>
-                        </div>
-
-                        <div class="formation-description">
-                            <p>Le BTS SIO option SLAM forme des professionnels capables de concevoir, développer et maintenir des applications informatiques. Cette formation me permet d'acquérir des compétences techniques solides en développement logiciel.</p>
-                        </div>
-
-                        <!-- Compétences acquises -->
-                        <div class="formation-competences">
-                            <h4>Compétences développées</h4>
-                            <div class="competences-grid">
-                                <div class="competence-item">
-                                    <span class="competence-icon">💻</span>
-                                    <div class="competence-text">
-                                        <h5>Développement d'applications</h5>
-                                        <p>Conception et réalisation de solutions logicielles</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="competence-item">
-                                    <span class="competence-icon">🗄️</span>
-                                    <div class="competence-text">
-                                        <h5>Gestion des données</h5>
-                                        <p>Conception et exploitation de bases de données</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="competence-item">
-                                    <span class="competence-icon">🔧</span>
-                                    <div class="competence-text">
-                                        <h5>Maintenance applicative</h5>
-                                        <p>Support et évolution des applications</p>
-                                    </div>
-                                </div>
-                                
-                                </div>
-                        </div>
-                    </div>
-
-                    <!-- Section École -->
-                    <div class="ecole-section">
-                        <div class="ecole-card">
-                            <div class="ecole-header">
-                                <img src="img/isitech.webp" alt="Logo Isitech" class="ecole-logo">
-                                <div class="ecole-info">
-                                    <h4>ISITECH</h4>
-                                    <p class="ecole-location">École Supérieure d'Informatique</p>
-                                </div>
-                            </div>
-                            
-                            <div class="ecole-description">
-                                <p>ISITECH est une école spécialisée dans l'informatique qui propose des formations adaptées aux besoins du marché. L'école met l'accent sur la pratique et les projets concrets.</p>
-                            </div>
-                            
-                            <div class="ecole-highlights">
-                                <h5>Points forts de la formation</h5>
-                                <ul class="highlights-list">
-                                    <li>
-                                        <span class="highlight-icon">🏢</span>
-                                        <span>Alternance</span>
-                                    </li>
-                                    <li>
-                                        <span class="highlight-icon">👨‍💼</span>
-                                        <span>Intervenants professionnels</span>
-                                    </li>
-                                    <li>
-                                        <span class="highlight-icon">💼</span>
-                                        <span>Projets réels d'entreprise</span>
-                                    </li>
-                                    <li>
-                                        <span class="highlight-icon">🎯</span>
-                                        <span>Formation orientée métier</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-    </main>
-
-    <footer>
-
-        <div class="ligne-Horizontale"></div>
-
-        <section class="contact-box" id="contact">
-            <div class="contact">
-                <h2>Contactez-moi</h2>
-
-                <div class="contact-wrapper">
-                    <!-- Section informations de contact -->
-                    <div class="contact-info-section">
-                        <h3>Mes Coordonnées</h3>
-                        <ul class="contact-box-content">
-                            <li class="contact-item">
-                                <span class="contact-icon">📧</span>
-                                <h3>remirusi@gmail.com</h3>
-                            </li>
-                            <li class="contact-item">
-                                <span class="contact-icon">📱</span>
-                                <h3>06 73 06 79 28</h3>
-                            </li>
-                            <li class="contact-item">
-                                <span class="contact-icon">💼</span>
-                                <h3>
-                                    <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/" target="_blank">
-                                        LinkedIn
-                                    </a>
-                                </h3>
-                            </li>
-                            <li class="contact-item">
-                                <span class="contact-icon">💻</span>
-                                <h3>
-                                    <a href="https://github.com/ridou77" target="_blank">
-                                        GitHub
-                                    </a>
-                                </h3>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Section formulaire -->
-                    <div class="form-section">
-                        <h3>Envoyez-moi un message</h3>
-                        <form action="https://formspree.io/f/xlgvnryr" method="POST" class="form-content">
-                            <div class="form-categories">
-                                <label for="nom">Nom *</label>
-                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-                            </div>
-
-                            <div class="form-categories">
-                                <label for="email">E-mail *</label>
-                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
-                            </div>
-
-                            <div class="form-categories">
-                                <label for="telephone">Téléphone</label>
-                                <input type="tel" id="telephone" name="telephone"
-                                    placeholder="Votre numéro de téléphone">
-                            </div>
-
-                            <div class="form-categories">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" required
-                                    placeholder="Écrivez votre message ici..."></textarea>
-                            </div>
-
-                            <button type="submit" class="sendBtn">Envoyer le message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </footer>
-
-    <script src="index.js" defer></script>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p class="footer-copy">© 2025 <span>Rémi RUSSI</span> — Développeur Full Stack</p>
+    <div class="footer-links">
+      <a href="https://github.com/ridou77" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/r%C3%A9mi-russi-6a65522a9/" target="_blank">LinkedIn</a>
+      <a href="veille.html">Veille Techno</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Reveal on scroll ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── Skill bars ──
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
+
+    // ── Form submit ──
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Message envoyé !';
+      btn.style.background = 'var(--accent)';
+      setTimeout(() => {
+        btn.textContent = 'Envoyer le message →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+
+    // ── Active nav link on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 80) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      });
+    });
+  </script>
 </body>
-
 </html>
