@@ -694,19 +694,6 @@
     }, { threshold: 0.3 });
     document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
 
-    // ── Form submit ──
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      btn.textContent = '✓ Message envoyé !';
-      btn.style.background = 'var(--accent)';
-      setTimeout(() => {
-        btn.textContent = 'Envoyer le message →';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
-
     // ── Active nav link on scroll ──
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
