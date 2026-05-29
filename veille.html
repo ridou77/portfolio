@@ -41,12 +41,12 @@
       </p>
       <div class="hero-stats-row">
         <div class="hstat">
-          <span class="hstat-num">99</span>
+          <span class="hstat-num">128</span>
           <span class="hstat-label">Jours visités</span>
         </div>
         <div class="hstat-sep"></div>
         <div class="hstat">
-          <span class="hstat-num">17h</span>
+          <span class="hstat-num">32h</span>
           <span class="hstat-label">Temps de lecture</span>
         </div>
         <div class="hstat-sep"></div>
@@ -61,7 +61,7 @@
         </div>
         <div class="hstat-sep"></div>
         <div class="hstat">
-          <span class="hstat-num">5</span>
+          <span class="hstat-num">8</span>
           <span class="hstat-label">Solutions apportées</span>
         </div>
       </div>
@@ -121,11 +121,11 @@
         <div class="forum-stats">
           <div class="fstat">
             <span class="fstat-label">📅 Jours visités</span>
-            <span class="fstat-val">99</span>
+            <span class="fstat-val">128</span>
           </div>
           <div class="fstat">
             <span class="fstat-label">📖 Temps de lecture</span>
-            <span class="fstat-val">17h</span>
+            <span class="fstat-val">32h</span>
           </div>
           <div class="fstat">
             <span class="fstat-label">👀 Sujets vus</span>
@@ -137,7 +137,7 @@
           </div>
           <div class="fstat">
             <span class="fstat-label">✅ Solutions</span>
-            <span class="fstat-val">5</span>
+            <span class="fstat-val">8</span>
           </div>
         </div>
       </div>
@@ -251,59 +251,6 @@
         </div>
       </article>
 
-      <!-- Article 3 -->
-      <article class="article-card shown" data-cat="securite">
-        <div class="article-inner">
-          <div class="article-meta">
-            <span class="article-cat securite">Sécurité</span>
-            <span class="article-date">2025</span>
-            <span class="article-read-time">⏱ 6 min</span>
-          </div>
-          <h2>Sécuriser ses Modules Dolibarr : Injections SQL, XSS et Gestion des Droits</h2>
-          <p class="article-intro">
-            Lorsqu'on développe des modules pour un ERP partagé par toute une équipe, la sécurité n'est pas optionnelle. Tour d'horizon des vulnérabilités les plus fréquentes et des bonnes pratiques défensives en PHP/Dolibarr.
-          </p>
-          <div class="article-body" id="body-3">
-            <h3>Injections SQL</h3>
-            <p>
-              Dolibarr expose sa classe <code>DoliDB</code> qui intègre des méthodes d'échappement. Il est impératif de ne jamais interpoler directement des variables dans les requêtes SQL.
-            </p>
-            <ul>
-              <li>Utiliser <code>$db->escape($var)</code> pour tout input utilisateur</li>
-              <li>Utiliser <code>$db->sanitize($var)</code> pour les noms de colonnes dynamiques</li>
-              <li>Préférer les requêtes préparées avec <code>llxSafe()</code> quand disponible</li>
-            </ul>
-            <h3>Cross-Site Scripting (XSS)</h3>
-            <p>
-              L'affichage de données issues de la base dans des formulaires HTML doit toujours passer par une fonction d'échappement.
-            </p>
-            <ul>
-              <li><code>dol_htmlentities($val)</code> pour tout affichage de valeur en HTML</li>
-              <li><code>dol_escape_js($val)</code> pour les valeurs injectées en JavaScript</li>
-              <li>Ne jamais utiliser <code>echo $_POST['champ']</code> sans sanitization</li>
-            </ul>
-            <div class="highlight">
-              ⚠️ Vulnérabilité fréquente : les champs de formulaire pré-remplis avec des données de la BDD sans <code>dol_htmlentities()</code> sont une source classique de XSS dans les modules custom.
-            </div>
-            <h3>Gestion des droits</h3>
-            <p>
-              Tout module Dolibarr doit définir ses propres droits dans le fichier <code>mymodule.class.php</code> et vérifier systématiquement ces droits en début de chaque script d'action avec <code>accessforbidden()</code>.
-            </p>
-          </div>
-          <div class="article-footer">
-            <div class="article-tags">
-              <span class="atag">PHP</span>
-              <span class="atag">SQL</span>
-              <span class="atag">XSS</span>
-              <span class="atag">Sécurité</span>
-            </div>
-            <button class="btn-expand" onclick="toggleArticle('body-3', this)">
-              Lire l'article ↓
-            </button>
-          </div>
-        </div>
-      </article>
-
       <!-- Article 4 -->
       <article class="article-card shown" data-cat="dolibarr">
         <div class="article-inner">
@@ -342,99 +289,6 @@
               <span class="atag">Architecture</span>
             </div>
             <button class="btn-expand" onclick="toggleArticle('body-4', this)">
-              Lire l'article ↓
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Article 5 -->
-      <article class="article-card shown" data-cat="erp">
-        <div class="article-inner">
-          <div class="article-meta">
-            <span class="article-cat erp">ERP & Gestion</span>
-            <span class="article-date">Jan 2025</span>
-            <span class="article-read-time">⏱ 5 min</span>
-          </div>
-          <h2>Dolibarr vs Odoo : Quel ERP Open Source pour les PME en 2025 ?</h2>
-          <p class="article-intro">
-            Analyse comparative des deux leaders des ERP open source à destination des PME françaises. Fonctionnalités, coût total de possession, facilité de personnalisation et taille de communauté.
-          </p>
-          <div class="article-body" id="body-5">
-            <h3>Dolibarr</h3>
-            <ul>
-              <li>Code PHP natif, très accessible pour un développeur web</li>
-              <li>Installation légère, même sur un hébergement mutualisé</li>
-              <li>Communauté francophone très active</li>
-              <li>Modules sur DoliStore, nombreux en open source sur GitHub</li>
-              <li>Idéal pour les petites structures (1-50 personnes)</li>
-            </ul>
-            <h3>Odoo</h3>
-            <ul>
-              <li>Python / framework MVC maison (OWL + QWeb)</li>
-              <li>Interface bien plus moderne et cohérente</li>
-              <li>Écosystème plus large et marketplace riche</li>
-              <li>Courbe d'apprentissage plus élevée pour le développement de modules</li>
-              <li>Version Community gratuite, mais certains modules clés sont payants</li>
-            </ul>
-            <div class="highlight">
-              📌 Mon bilan : pour une entreprise comme Emdelen qui a des besoins métier spécifiques et une équipe dev interne, Dolibarr est un choix cohérent grâce à sa flexibilité et à la simplicité de sa stack technique.
-            </div>
-          </div>
-          <div class="article-footer">
-            <div class="article-tags">
-              <span class="atag">Odoo</span>
-              <span class="atag">Dolibarr</span>
-              <span class="atag">Comparatif</span>
-              <span class="atag">PME</span>
-            </div>
-            <button class="btn-expand" onclick="toggleArticle('body-5', this)">
-              Lire l'article ↓
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Article 6 -->
-      <article class="article-card shown" data-cat="dev">
-        <div class="article-inner">
-          <div class="article-meta">
-            <span class="article-cat dev">Développement</span>
-            <span class="article-date">Fév 2025</span>
-            <span class="article-read-time">⏱ 4 min</span>
-          </div>
-          <h2>Git Flow en Équipe : Stratégie de Branches pour un Projet Dolibarr</h2>
-          <p class="article-intro">
-            Gérer plusieurs modules en parallèle, avec des cycles de livraison différents et une mise en production partagée, exige une stratégie de branches claire. Retour d'expérience sur l'organisation Git chez Emdelen.
-          </p>
-          <div class="article-body" id="body-6">
-            <h3>Problématique</h3>
-            <p>
-              Développer des modules Dolibarr implique des dépendances entre modules, des phases de test sur staging et des mises en production planifiées. Sans stratégie de branches, les conflits et les régressions se multiplient.
-            </p>
-            <h3>Stratégie adoptée</h3>
-            <ul>
-              <li><code>main</code> : code en production, jamais modifié directement</li>
-              <li><code>develop</code> : intégration continue, branch de référence pour les PR</li>
-              <li><code>feature/nom-module</code> : une branche par module ou fonctionnalité</li>
-              <li><code>hotfix/xxx</code> : correctifs urgents directement sur <code>main</code></li>
-            </ul>
-            <div class="highlight">
-              🔁 Workflow : <code>feature</code> → PR vers <code>develop</code> → tests staging → merge vers <code>main</code> → tag de version → déploiement.
-            </div>
-            <h3>Outils complémentaires</h3>
-            <p>
-              Utilisation de GitHub Actions pour déclencher des vérifications de syntaxe PHP (<code>php -l</code>) automatiquement à chaque push, ce qui évite de déployer du code cassé en production.
-            </p>
-          </div>
-          <div class="article-footer">
-            <div class="article-tags">
-              <span class="atag">Git</span>
-              <span class="atag">GitHub</span>
-              <span class="atag">CI/CD</span>
-              <span class="atag">Workflow</span>
-            </div>
-            <button class="btn-expand" onclick="toggleArticle('body-6', this)">
               Lire l'article ↓
             </button>
           </div>

@@ -23,8 +23,7 @@
     <div class="proj-eyebrow">Projet Entreprise — Emdelen</div>
     <h1>Module <em>Générique</em><br>Emdelen</h1>
     <p class="lead">
-      <!-- TODO : Décrivez en 2-3 phrases ce que fait ce module et pourquoi il a été créé -->
-      À compléter : contexte et objectif principal du module générique.
+      Module utilisant des hooks pour crocheter des morceaux de codes sans toucher au core du logiciel.
     </p>
     <div class="meta-row">
       <div class="meta-pill"><span class="icon">📅</span> Sept 2024 — Aujourd'hui</div>
@@ -46,8 +45,7 @@
     <h2>Pourquoi ce projet ?</h2>
     <div class="context-box">
       <p>
-        <!-- TODO : Expliquez le problème métier qui a justifié ce module -->
-        À compléter : quel besoin ou problème ce module résout-il chez Emdelen ?
+        Le but de ce module est d'adapter Dolibarr aux besoins spécifiques à Emdelen, il permet d'éviter la modification du core ou du moins de la limiter. Et permet l'ajout de d'extrafield, widget et autres fonctionnalités toutes rassemblées dans un même module externe.
       </p>
     </div>
     <p>
@@ -65,28 +63,26 @@
 
       <div class="feature-card">
         <div class="f-icon">🔧</div>
-        <h4><!-- TODO : Nom fonctionnalité 1 --></h4>
-        <p><!-- TODO : Description courte --></p>
+        <h4>Gestion de droits</h4>
+        <p>- Bloquer l'accès à certaines pages restreintes</p>
+        <p>- Améliorer l'envoi de mail, et rendre impossible cette fonction pour certaines pages</p>
       </div>
 
       <div class="feature-card">
         <div class="f-icon">⚙️</div>
-        <h4><!-- TODO : Nom fonctionnalité 2 --></h4>
-        <p><!-- TODO : Description courte --></p>
+        <h4>Page Admin</h4>
+        <p>- Permettre la gestion generale via des constantes et la modification des fonctionnalité utilisées
+          depuis la page admin du module
+        </p>
       </div>
 
       <div class="feature-card">
         <div class="f-icon">📦</div>
-        <h4><!-- TODO : Nom fonctionnalité 3 --></h4>
-        <p><!-- TODO : Description courte --></p>
+        <h4>Ajout d'onglets</h4>
+        <p>- Création d'onglet implémentant de nouvelles Fonctionnalités</p>
+        <p>- Création de widget pour l'affichage d'information</p>
       </div>
-
-      <div class="feature-card">
-        <div class="f-icon">🧩</div>
-        <h4><!-- TODO : Nom fonctionnalité 4 --></h4>
-        <p><!-- TODO : Description courte --></p>
-      </div>
-
+ 
     </div>
   </div>
 
@@ -138,15 +134,18 @@
       <div class="diff-item">
         <div class="diff-icon">⚡</div>
         <div class="diff-body">
-          <h4><!-- TODO : Titre difficulté 1 --></h4>
-          <p><!-- TODO : Description du problème et comment vous l'avez résolu --></p>
+          <h4>Les Hooks</h4>
+          <p>Dolibarr implémente des points de crochetage dans son core, mais à certains endroits, il ne sont pas présent, 
+            et ne permettent pas la modification d'une fonctionnalité</p>
         </div>
       </div>
       <div class="diff-item">
         <div class="diff-icon">🔍</div>
         <div class="diff-body">
-          <h4><!-- TODO : Titre difficulté 2 --></h4>
-          <p><!-- TODO : Description du problème et comment vous l'avez résolu --></p>
+          <h4>Contourner le soucis :</h4>
+          <p>- Utilisations de triggers<br>
+            - AJout de nouvelles pages / onglet pour ne pas à avoir à modifier le core
+          </p>
         </div>
       </div>
     </div>
@@ -162,6 +161,7 @@
       <div class="stack-pill"><span class="dot"></span>PHP</div>
       <div class="stack-pill"><span class="dot"></span>MariaDB</div>
       <div class="stack-pill"><span class="dot"></span>Dolibarr</div>
+      <div class="stack-pill"><span class="dot"></span>HTML/CSS/JS</div>
       <!-- TODO : Ajoutez d'autres technologies si besoin -->
     </div>
   </div>
